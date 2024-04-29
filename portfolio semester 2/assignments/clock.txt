@@ -1,0 +1,346 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-image-gallery-container">
+        <div class="Y2K-gallery-image" onclick="openImage(this)">
+            <img src="" alt="">
+        </div>
+        <div class="Y2K-gallery-images-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+            <div class="Y2K-gallery-images">
+                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                    <img src="img/clock-bad.png" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/clock-good.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Y2K-assignment-text">
+            <h1>Analog Clock</h1>
+
+            <p>In this assignment, I made an analog clock that shows the current time</p>
+
+            <p>I made the clock in Adobe illustrator and I am manipulating the arrow (which is an svg) with JavaScript</p>
+
+            <p>One challenge I had was making the clock itself since I have not worked with Adobe Illustrator before and I learned some new tricks (like copying elements by holding alt, grouping, transforming and making copies)</p>
+
+            <p>A challenge I had with the code itself was rotating the arrows, since they weren't rotating around the correct axis. But after I discovered the <code>transform-origin</code> property in CSS I managed to make it work correctly</p>
+
+            <div id="demo-button" onclick="window.open('/portfolio semester 2/assignments/challenges/clock.html','_blank')">
+                Demo
+            </div>
+
+            <div class="block-code-with-highlights">
+                <pre>
+                    <code class="html language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;title&gt;RGB(A) validator&lt;/title&gt;
+
+&lt;style type="text/css"&gt;
+    svg {
+        height: 700px;
+        width: 700px;
+    }
+    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
+    .st1{fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+    .st2{stroke:#000000;stroke-miterlimit:10;}
+    .st3{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+
+    /* minutes arrow */
+    .st4{
+        fill:#000000;
+        /* stroke:#000000; */
+        stroke-miterlimit:10;
+        /* transform: rotate(30deg); */
+        transform-origin: center center;
+    }
+
+    /* hours arrow */
+    .st5{
+        fill:#000000;
+        /* stroke:#000000; */
+        stroke-miterlimit:10;
+        /* transform: rotate(150deg); */
+        transform-origin: center center;
+    }
+
+    .st6{fill:#9B8579;stroke:#000000;stroke-miterlimit:10;}
+    .st7{font-family:'MyriadPro-Regular';}
+    .st8{font-size:60px;}
+    
+    /* seconds arrow */
+    .st9{
+        fill:#000000;
+        /* stroke:#000000; */
+        stroke-miterlimit:10;
+        /* transform: rotate(80deg); */
+        transform-origin: center center;
+    }
+
+    .transparent-arrow {
+        fill: none;
+        stroke: none;
+    }
+
+    .text-bubbles {
+        display: none;
+    }
+ &lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve"&gt;
+
+&lt;circle class="st0" cx="500" cy="500.1" r="335" id="big-circle"/&gt;
+&lt;circle class="st1" cx="500" cy="500.1" r="325" id="small-circle"/&gt;
+
+&lt;g class="hour-arrows"&gt;
+   &lt;g&gt;
+       &lt;rect x="494" y="182.6" class="st2" width="12" height="35"/&gt;
+       &lt;rect x="494" y="782.6" class="st2" width="12" height="35"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       &lt;rect x="344" y="222.8" transform="matrix(0.866 -0.5 0.5 0.866 -73.2408 207.1892)" class="st2" width="12" height="35"/&gt;
+       &lt;rect x="644" y="742.4" transform="matrix(0.866 -0.5 0.5 0.866 -292.856 426.8045)" class="st2" width="12" height="35"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       &lt;rect x="234.2" y="332.6" transform="matrix(0.5 -0.866 0.866 0.5 -183.0746 383.0484)" class="st2" width="12" height="35"/&gt;
+       &lt;rect x="753.8" y="632.6" transform="matrix(0.5 -0.866 0.866 0.5 -183.0746 983.0484)" class="st2" width="12" height="35"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="194" y="482.6" transform="matrix(4.486906e-11 -1 1 4.486906e-11 -300.0714 700.0714)" class="st2" width="12" height="35"/&gt;
+       
+           &lt;rect x="794" y="482.6" transform="matrix(4.517193e-11 -1 1 4.517193e-11 299.9286 1300.0714)" class="st2" width="12" height="35"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       &lt;rect x="234.2" y="632.6" transform="matrix(-0.5 -0.866 0.866 -0.5 -202.6898 1183.1199)" class="st2" width="12" height="35"/&gt;
+       &lt;rect x="753.8" y="332.6" transform="matrix(-0.5 -0.866 0.866 -0.5 836.5407 1183.1199)" class="st2" width="12" height="35"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       &lt;rect x="344" y="742.4" transform="matrix(-0.866 -0.5 0.5 -0.866 273.1694 1592.9536)" class="st2" width="12" height="35"/&gt;
+       &lt;rect x="644" y="222.8" transform="matrix(-0.866 -0.5 0.5 -0.866 1092.7847 773.3384)" class="st2" width="12" height="35"/&gt;
+   &lt;/g&gt;
+&lt;/g&gt;
+
+&lt;g class="minute-arrows"&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="466.1" y="189.7" transform="matrix(0.9945 -0.1045 0.1045 0.9945 -18.5177 50.0914)" class="st2" width="5" height="24"/&gt;
+       &lt;rect x="528.9" y="786.4" transform="matrix(0.9945 -0.1045 0.1045 0.9945 -80.5476 59.916)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       &lt;rect x="435.1" y="194.6" transform="matrix(0.9781 -0.2079 0.2079 0.9781 -33.397 95.503)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="559.9" y="781.5" transform="matrix(0.9781 -0.2079 0.2079 0.9781 -152.692 134.2643)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       &lt;rect x="404.8" y="202.8" transform="matrix(0.9511 -0.309 0.309 0.9511 -46.4284 136.3719)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="590.2" y="773.4" transform="matrix(0.9511 -0.309 0.309 0.9511 -213.6893 221.5956)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       &lt;rect x="375.5" y="214" transform="matrix(0.9135 -0.4067 0.4067 0.9135 -59.2477 173.2773)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="619.5" y="762.1" transform="matrix(0.9135 -0.4067 0.4067 0.9135 -261.0926 319.9262)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       &lt;rect x="321.2" y="245.4" transform="matrix(0.809 -0.5878 0.5878 0.809 -89.4617 239.3978)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="673.8" y="730.8" transform="matrix(0.809 -0.5878 0.5878 0.809 -307.4245 539.3978)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="296.8" y="265.1" transform="matrix(0.7431 -0.6691 0.6691 0.7431 -108.5681 271.4263)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="698.2" y="711" transform="matrix(0.7431 -0.6691 0.6691 0.7431 -303.8029 654.5961)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="274.6" y="287.3" transform="matrix(0.6691 -0.7431 0.7431 0.6691 -130.7777 304.933)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="720.4" y="688.8" transform="matrix(0.6691 -0.7431 0.7431 0.6691 -281.6039 769.1285)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="254.8" y="311.7" transform="matrix(0.5878 -0.809 0.809 0.5878 -155.8471 341.6046)" class="st2" width="5" height="24"/&gt;
+       &lt;rect x="740.2" y="664.4" transform="matrix(0.5878 -0.809 0.809 0.5878 -241.0708 879.686)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="223.4" y="366.1" transform="matrix(0.4067 -0.9135 0.9135 0.4067 -211.3265 430.6866)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="771.6" y="610.1" transform="matrix(0.4067 -0.9135 0.9135 0.4067 -109.0861 1076.2069)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="212.2" y="395.4" transform="matrix(0.309 -0.9511 0.9511 0.309 -239.0861 485.6589)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="782.8" y="580.8" transform="matrix(0.309 -0.9511 0.9511 0.309 -21.1233 1156.4794)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="204.1" y="425.7" transform="matrix(0.2079 -0.9781 0.9781 0.2079 -264.5228 548.7374)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="790.9" y="550.4" transform="matrix(0.2079 -0.9781 0.9781 0.2079 78.3238 1221.6117)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="199.1" y="456.7" transform="matrix(0.1045 -0.9945 0.9945 0.1045 -285.5793 620.2579)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="795.9" y="519.4" transform="matrix(0.1045 -0.9945 0.9945 0.1045 186.3868 1269.8635)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="199.1" y="519.4" transform="matrix(-0.1045 -0.9945 0.9945 -0.1045 -305.7978 787.5183)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="795.9" y="456.7" transform="matrix(-0.1045 -0.9945 0.9945 -0.1045 415.6623 1311.6898)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="204.1" y="550.4" transform="matrix(-0.2079 -0.9781 0.9781 -0.2079 -300.6531 881.4258)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="790.9" y="425.7" transform="matrix(-0.2079 -0.9781 0.9781 -0.2079 530.2775 1304.806)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="212.2" y="580.8" transform="matrix(-0.309 -0.9511 0.9511 -0.309 -282.7402 980.1302)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="782.8" y="395.4" transform="matrix(-0.309 -0.9511 0.9511 -0.309 640.5648 1280.1302)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="223.4" y="610.1" transform="matrix(-0.4067 -0.9135 0.9135 -0.4067 -250.4767 1081.5233)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="771.6" y="366.1" transform="matrix(-0.4067 -0.9135 0.9135 -0.4067 743.5374 1238.9597)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="254.8" y="664.4" transform="matrix(-0.5878 -0.809 0.809 -0.5878 -138.6957 1282.145)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="740.2" y="311.7" transform="matrix(-0.5878 -0.809 0.809 -0.5878 917.3484 1114.884)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="274.6" y="688.8" transform="matrix(-0.6691 -0.7431 0.7431 -0.6691 -58.3602 1375.6376)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="720.4" y="287.3" transform="matrix(-0.6691 -0.7431 0.7431 -0.6691 984.2398 1036.8763)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="296.8" y="711" transform="matrix(-0.7431 -0.6691 0.6691 -0.7431 37.8636 1460.5642)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="698.2" y="265.1" transform="matrix(-0.7431 -0.6691 0.6691 -0.7431 1036.0551 951.9603)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="321.2" y="730.8" transform="matrix(-0.809 -0.5878 0.5878 -0.809 148.9214 1533.9406)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="673.8" y="245.4" transform="matrix(-0.809 -0.5878 0.5878 -0.809 1072.2264 863.1201)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="375.5" y="762.1" transform="matrix(-0.9135 -0.4067 0.4067 -0.9135 408.4109 1635.0806)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="619.5" y="214" transform="matrix(-0.9135 -0.4067 0.4067 -0.9135 1098.3398 685.4749)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="404.8" y="773.4" transform="matrix(-0.9511 -0.309 0.309 -0.9511 551.957 1658.1981)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="590.2" y="202.8" transform="matrix(-0.9511 -0.309 0.309 -0.9511 1090.0383 602.1541)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="435.1" y="781.5" transform="matrix(-0.9781 -0.2079 0.2079 -0.9781 700.7086 1660.6788)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="559.9" y="194.6" transform="matrix(-0.9781 -0.2079 0.2079 -0.9781 1069.4976 525.663)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+   &lt;g&gt;
+       
+           &lt;rect x="466.1" y="786.4" transform="matrix(-0.9945 -0.1045 0.1045 -0.9945 851.2572 1641.4685)" class="st2" width="5" height="24"/&gt;
+       
+           &lt;rect x="528.9" y="189.7" transform="matrix(-0.9945 -0.1045 0.1045 -0.9945 1038.7213 457.8668)" class="st2" width="5" height="24"/&gt;
+   &lt;/g&gt;
+&lt;/g&gt;
+
+&lt;g&gt;
+   &lt;!-- &lt;path class="st3 transparent-arrow" d="M500,762.5L500,762.5c-0.8,0-1.5-0.7-1.5-1.5V239c0-0.8,0.7-1.5,1.5-1.5l0,0c0.8,0,1.5,0.7,1.5,1.5v522 C501.5,761.8,500.8,762.5,500,762.5z"/&gt; --&gt;
+   &lt;path class="st9" id="seconds-pointer" d="M500,500L500,500c-0.8,0-1.5-0.7-1.5-1.5V239c0-0.8,0.7-1.5,1.5-1.5l0,0c0.8,0,1.5,0.7,1.5,1.5v259.5 C501.5,499.3,500.8,500,500,500z"/&gt;
+&lt;/g&gt;
+
+&lt;g&gt;
+   &lt;!-- &lt;rect class="st3 transparent-arrow" x="494" y="275" width="12" height="450"/&gt; --&gt;
+   &lt;path class="st4" id="minutes-pointer"d="M500,500L500,500c-3.3,0-6-2.7-6-6V281c0-3.3,2.7-6,6-6l0,0c3.3,0,6,2.7,6,6v213C506,497.3,503.3,500,500,500z"/&gt;
+&lt;/g&gt;
+
+&lt;g&gt;
+   &lt;!-- &lt;rect x="494" y="388.8" class="st3 transparent-arrow" width="12" height="300"/&gt; --&gt;
+   &lt;rect x="494" y="351.3" class="st5" id="hours-pointer" width="12" height="150"/&gt;
+&lt;/g&gt;
+
+&lt;g class="text-bubbles"&gt;
+   &lt;circle class="st6 number-circle" cx="499.3" cy="120" r="50"/&gt;
+   &lt;circle class="st6 number-circle" cx="499.3" cy="880" r="50"/&gt;
+&lt;/g&gt;
+&lt;text transform="matrix(1 0 0 1 468.5303 137.3618)" class="st7 st8"&gt;XII&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 682.5722 188.2381)" class="st7 st8"&gt;I&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 815.5685 329.2496)" class="st7 st8"&gt;II&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 859.0975 517.3151)" class="st7 st8"&gt;III&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 805.0125 708.2938)" class="st7 st8"&gt;IV&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 672.4008 847.8914)" class="st7 st8"&gt;V&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 476.0903 897.8098)" class="st7 st8"&gt;VI&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 280.296 847.8906)" class="st7 st8"&gt;VII&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 95.3602 517.3151)" class="st7 st8"&gt;IX&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 153.7368 331.2502)" class="st7 st8"&gt;X&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 285.4441 188.2379)" class="st7 st8"&gt;XI&lt;/text&gt;
+&lt;text transform="matrix(1 0 0 1 140.4591 708.2941)" class="st7 st8"&gt;VII&lt;/text&gt;
+&lt;/svg&gt;
+
+&lt;script&gt;
+
+// function for updating the time
+function showTime(){
+    
+    // making a date object
+    var date = new Date();
+    
+    // setting a variable for the seconds, minutes and hours
+    var curSec = date.getSeconds();
+    var curMin = date.getMinutes();
+    var curHour = date.getHours();
+
+    // rotating the arrows for the clock with degrees depending on the arrow
+    $(seconds).css("transform",`rotate(${curSec*6}deg)`)
+    $(minutes).css("transform",`rotate(${curMin*6}deg)`)
+    $(hours).css("transform",`rotate(${curHour*30}deg)`)
+}
+
+// setting a variable for each arrow, so they can be rotated
+var seconds = $("#seconds-pointer")
+var minutes = $("#minutes-pointer")
+var hours = $("#hours-pointer")
+
+// runs the function on load so they don't all point at the top
+showTime()
+
+// runs the function every second
+var intervalId = window.setInterval(function(){
+    showTime()
+}, 1000);
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+    </div>
+</div>

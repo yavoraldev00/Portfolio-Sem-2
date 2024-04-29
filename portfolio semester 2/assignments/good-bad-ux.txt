@@ -1,0 +1,27 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-image-gallery-container">
+        <div class="Y2K-gallery-image" onclick="openImage(this)">
+            <img src="" alt="">
+        </div>
+        <div class="Y2K-gallery-images-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+            <div class="Y2K-gallery-images">
+                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                    <img src="img/good-usability.png" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/bad-usability.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Y2K-assignment-text">
+
+        <h2>Example of Good/Bad UX</h2>
+
+        <p>In this assignemnt, I had to showcase one good and one bad example of user experience</p>
+
+        <p>In the images I've showcased both examples. One is from the flashcard learning app Anki and the other one is for internet banking OBB Mobile</p>
+    </div>
+</div>

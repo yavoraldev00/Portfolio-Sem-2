@@ -1,0 +1,30 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-image-gallery-container">
+        <div class="Y2K-gallery-image" onclick="openImage(this)">
+            <img src="" alt="">
+        </div>
+        <div class="Y2K-gallery-images-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+            <div class="Y2K-gallery-images">
+                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                    <img src="img/empath-map.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Y2K-assignment-text">
+        <h2>Example of Good/Bad UX</h2>
+
+        <p>In this assignemnt, I had to make an empathy map based on interviewing someone about a topic</p>
+
+        <p>I chose to interview my friend Tihomira and for the topic we discussed the things we're looking for and avoinding when looking for a job. I asked her the following questions:</p>
+
+        <p>"What do you do when you're looking for a job?<br>
+            How important is having a job?<br>
+            What are the most important factors when looking for a job?"
+        </p>
+
+        <p>I also asked her for clarification when an answer was too short and below I've illustrated in keypoints based on the empathy map template</p>
+    </div>
+</div>

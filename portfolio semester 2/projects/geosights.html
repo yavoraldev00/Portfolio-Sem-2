@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tokyo-night-dark.min.css">
+    <link rel="stylesheet" href="../img/style.css">
+    
+    <title>Geosights - Portfolio</title>
+
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.open('../index.html','_self')">
+            <img src="../img/pencil.svg" alt="">
+        </div>
+        <nav class="header-navigation">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../work.html">Work</a></li>
+                <li><a href="../about-me.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="assignment-page">
+        <div class="expanded-assignment-container">
+            <h1>Geosights</h1>
+
+            <div id="demo-button" onclick="window.open('https://i503139.hera.fhict.nl/geosights/index.html','_self')">To Project</div>
+
+            <p>This is a project I had in semester 1 in my studies after choosing the Media profile</p>
+
+            <p>In it, we made a website for traveling, where people could find interesting travel destinations in Europe, while also being free or affordable even for a student</p>
+
+            <p>When the project started, the first thing we had to do was make a project plan, which included what our roles were in the survey, a timeline as well our responsiblities and consiquences for breaking them</p>
+
+            <div class="picture_container">
+                <img src="../img/project_timeline.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/project_timeline_3.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/project_timeline_4.png" alt="" onclick="window.open(this.src,'_blank')">
+            </div>
+
+            <p>We came up with the idea by brainstorming for a site that we could all use and a topic we were interested in. After we decided to make a traveling website, we had to think of a name. I suggested it had something to do with the word "sights" in it, as well as something relating to it being about about the globe/Earth since we originally planne it to be a world map. We decided on the name "Geosights", even though later it was only focused on European countries</p>
+
+            <p>After we did some brainstorming, we started doing some research on what countries people were interested in and what information they would need. We did a survey as well as some interviews to gather information</p>
+
+            <div class="picture_container">
+                <img src="../img/research_1.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/research_2.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/research_3.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/research_4.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/survey_1.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/survey_2.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/survey_3.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/survey_4.png" alt="" onclick="window.open(this.src,'_blank')">
+            </div>
+
+            <p>For my part of the project, I was responsible for all the JavaScript which was all the functionality for the website</p>
+
+            <p>The main thing I was working on and struggling with for a bit was the interactive map, which I had to use an SVG map I found online and configure it. At first I started working with it in an <code id="code-tag">iframe</code> tag, but after a day or two I realized that it wouldn't work with it, so I had to copy over the large amount of code and put it in the index page itself</iframe></p>
+
+            <div class="picture_container_4">
+                <img src="../img/geo_test_1.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_test_2.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_test_3.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_test_4.png" alt="" onclick="window.open(this.src,'_blank')">
+            </div>
+
+            <p>Besides making the interactive map, I also made templates for the location pages, country pages, a filter for the locations in the country page, a gallery and implemented google maps into the website</p>
+
+            <div class="picture_container_4">
+                <img src="../img/geo_1.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_2.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_3.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_4.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_5.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_6.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_7.png" alt="" onclick="window.open(this.src,'_blank')">
+            </div>
+
+            <p>Another feature I added was another map for the country page, which is different than the one in the main page</p>
+
+            <p>Instead of having a hovering preview, this one has clickable pins, which displays locations which you can click on again to go to those pages</p>
+
+            <div class="picture_container">
+                <img src="../img/geo_8.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/geo_9.png" alt="" onclick="window.open(this.src,'_blank')">
+            </div>
+
+            <p>Overall the main challenge I had with the project was time managment. Our team finished with the design and what they wanted inside way too late and I didn't have time to do everything I wanted. I also spent way too much time researching things that didn't matter in the end (having an extensive list of locations)</p>
+
+            <img src="../img/geo_10.png" height="350px" alt="" onclick="window.open(this.src,'_blank')">
+
+            <p>For future projects, I'm going to be more pushy for my teammates to follow the timeline since in the end things won't work out when we have a deadline</p>
+            <!-- <div class="picture_container_4">
+                <img src="../img/proto_2.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/proto_3.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/proto_4.png" alt="" onclick="window.open(this.src,'_blank')">
+                <img src="../img/proto_5.png" alt="" onclick="window.open(this.src,'_blank')">
+            </div> -->
+        </div>
+    </main>
+    <footer>@ 2023 Yavor Aldev</footer>
+</body>
+</html>

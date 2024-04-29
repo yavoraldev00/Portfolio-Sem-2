@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Document</title>
+<style>
+.remove {
+    display: none;
+}
+
+.card-container {
+    aspect-ratio: 1/1;
+    height: 90vh;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.game-intro * {
+    width: fit-content;
+    margin: auto;
+}
+
+.difficulties {
+    display: flex;
+    gap: 20px;
+}
+
+.difficulties button {
+    height: 50px;
+    width: 200px;
+
+    font-size: 18pt;
+
+    border-radius: 20px;
+}
+
+button:active {
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(0, 0, 0, 0.3), 
+          rgba(0, 0, 0, 0.3)
+        )
+}
+
+.card {
+    /* background-color: aquamarine; */
+    border: 1px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+
+    transition: 0.7s all;
+    transform-style: preserve-3d;
+    position: relative;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' viewBox='0 -960 960 960' width='48'%3E%3Cpath d='M431-330q1-72 16.5-105t58.5-72q42-38 64.5-70.5T593-647q0-45-30-75t-84-30q-52 0-80 29.5T358-661l-84-37q22-59 74.5-100.5T479-840q100 0 154 55.5T687-651q0 48-20.5 87T601-482q-49 47-59 72t-11 80H431Zm48 250q-29 0-49.5-20.5T409-150q0-29 20.5-49.5T479-220q29 0 49.5 20.5T549-150q0 29-20.5 49.5T479-80Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2); /* Add the drop shadow */
+
+}
+
+/* when a card is hovered and is not clicked yet */
+.card:not(.active-card):hover {
+    transform: scale(1.1);
+}
+
+/* after a card is clicked */
+.active-card {
+    transform: scale(1.1) rotateY(180deg);
+}
+
+.correct {
+    transform: scale(0) rotateY(180deg) !important;
+}
+
+.card .front,
+.card .back {
+    border-radius: 25px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    z-index: 2;
+}
+
+.card .back {
+    background-color: lightblue;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.remaining-time {
+    width: fit-content;
+    margin: auto;
+    padding: 0;
+}
+
+test {
+    background-color: red;
+    background-color: blue;
+    background-color: green;
+    background-color: cyan;
+    background-color: magenta;
+    background-color: yellow;
+    background-color: white;
+    background-color: black;
+    background-color: gray;
+    background-color: pink;
+    background-color: lime;
+    background-color: lightblue;
+    background-color: blueviolet;
+    background-color: lightcoral;
+    background-color: palegoldenrod;
+    background-color: darkred;
+    background-color: dimgray;
+    background-color: cornflowerblue;
+}
+</style>
+</head>
+
+<body>
+    <div class="game-intro">
+        <h1>Welcome to the matching game!</h1>
+        <p>Select a difficulty</p>
+        <div class="difficulties">
+            <button id="easy" onclick="startGame(this)">Easy</button>
+            <button id="normal" onclick="startGame(this)">Normal</button>
+            <button id="hard" onclick="startGame(this)">Hard</button>
+        </div>
+    </div>
+    <div class="card-container">
+        <!-- <div class="card">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div> -->
+    </div>
+    <h1 class="remaining-time remove"></h1>
+</body>
+
+<script>
+// array shuffle algorythm
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// colors of cards
+var colors = ["red","blue","green","cyan","magenta","yellow","white","black","gray","pink","lime","lightblue","blueviolet","lightcoral","palegoldenrod","darkred","dimgray","cornflowerblue"]
+
+// adds colored cards to the board
+function addCards(arr){
+    for(let i = 0; i < 2; i++){
+        arr = shuffleArray(arr)
+        arr.forEach(element => {
+            $(".card-container").append(`
+            <div class="card ${element}" onclick="checkPair(this)">
+                <div class="front"></div>
+                <div class="back" style="background-color: ${element}"></div>
+            </div>
+            `)
+        });
+    }
+}
+
+// checks if the pair of card matches colors
+function checkPair(el){
+    if($(".active-card").length < 2){
+        $(el).addClass("active-card")
+        
+        if($(".active-card").length == 2){
+            setTimeout(() => {
+                if($(".active-card")[0].className == $(".active-card")[1].className){
+                    $(".active-card").each((index,el) => {
+                        $(el).removeClass("active-card")
+                        $(el).addClass("correct")
+                    })
+                    if($(".correct").length == $(".card").length){
+                        setTimeout(() => {
+                            alert("Congratulations, you win! :)")
+                            if(window.confirm("Play again?")){
+                                time = NaN
+                                $(".game-intro").removeClass("remove")
+                                $(".remaining-time").addClass("remove")
+                                $(".card-container").empty()
+                            }
+                        }, 1000);
+                    }
+                }else{
+                    $(".active-card").each((index,el) => {
+                        $(el).removeClass("active-card")
+                    })
+                }
+            }, 1500);
+        }
+    }
+}
+
+// starts game
+function startGame(el){
+    $(".game-intro").addClass("remove")
+    $(".remaining-time").removeClass("remove")
+
+    // changes board based on selected difficulty
+    switch(el.id){
+        case "easy":
+            $(".card-container").css("grid-template-rows","repeat(2, 1fr)")
+            $(".card-container").css("grid-template-columns","repeat(2, 1fr)")
+            addCards(colors.slice(0,2))
+            time = 60; break;
+        case "normal":
+            $(".card-container").css("grid-template-rows","repeat(4, 1fr)")
+            $(".card-container").css("grid-template-columns","repeat(4, 1fr)")
+            addCards(colors.slice(0,8))
+            time = 120; break;
+        case "hard":
+            $(".card-container").css("grid-template-rows","repeat(6, 1fr)")
+            $(".card-container").css("grid-template-columns","repeat(6, 1fr)");
+            addCards(colors)
+            time = 180; break;
+    }
+}
+
+// variable for game time
+var time
+
+// timer for the game
+var gameTimer = setInterval(() => {
+    if(time == 0){
+        alert("YOU LOSE :(")
+        if(window.confirm("Retry game?")){
+            $(".game-intro").removeClass("remove")
+            $(".remaining-time").addClass("remove")
+            $(".card-container").empty()
+        }
+    }
+
+    $(".remaining-time").text(`Remaining time: ${Math.floor(time/60)} : ${time%60 < 10 ? "0" + time%60 : time%60}`)
+    time -= 1
+
+}, 1000);
+
+</script>
+</html>

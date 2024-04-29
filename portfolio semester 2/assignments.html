@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tokyo-night-dark.min.css">
+    <link rel="stylesheet" href="img/style.css">
+    <title>Assignments - Portfolio</title>
+
+</head>
+<body id="assignments-body">
+    <header>
+        <div class="logo" onclick="window.open('index.html','_self')">
+            <img src="img/pencil.svg" alt="">
+        </div>
+        <nav class="header-navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about-me.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="Y2K-assignments-main">
+        <div class="Y2K-user-centered-design Y2K-subject-bubble" onclick="moveBubble(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M0 816v-53q0-38.567 41.5-62.784Q83 676 150.376 676q12.165 0 23.395.5Q185 677 196 678.652q-8 17.348-12 35.165T180 751v65H0Zm240 0v-65q0-32 17.5-58.5T307 646q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-19.861-3.5-37.431Q773 696 765 678.727q11-1.727 22.171-2.227 11.172-.5 22.829-.5 67.5 0 108.75 23.768T960 763v53H780Zm-480-60h360v-6q0-37-50.5-60.5T480 666q-79 0-129.5 23.5T300 751v5ZM149.567 646Q121 646 100.5 625.438 80 604.875 80 576q0-29 20.562-49.5Q121.125 506 150 506q29 0 49.5 20.5t20.5 49.933Q220 605 199.5 625.5T149.567 646Zm660 0Q781 646 760.5 625.438 740 604.875 740 576q0-29 20.562-49.5Q781.125 506 810 506q29 0 49.5 20.5t20.5 49.933Q880 605 859.5 625.5T809.567 646ZM480 576q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600 456q0 50-34.5 85T480 576Zm.351-60Q506 516 523 498.649t17-43Q540 430 522.851 413t-42.5-17Q455 396 437.5 413.149t-17.5 42.5Q420 481 437.351 498.5t43 17.5ZM480 756Zm0-300Z"/></svg>
+        </div>
+        <div class="Y2K-user-centered-design Y2K-subject-description">
+            <h1>User Centered Design</h1>
+            <p>Creating designs based on user needs, use and preferences, creating a meaningful and satisfying experience</p>
+        </div>
+        
+        <div class="Y2K-media-production Y2K-subject-bubble" onclick="moveBubble(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M479.5 790q72.5 0 121.5-49t49-121.5q0-72.5-49-121T479.5 450q-72.5 0-121 48.5t-48.5 121q0 72.5 48.5 121.5t121 49Zm0-60q-47.5 0-78.5-31.5t-31-79q0-47.5 31-78.5t78.5-31q47.5 0 79 31t31.5 78.5q0 47.5-31.5 79t-79 31.5ZM140 936q-24 0-42-18t-18-42V363q0-23 18-41.5t42-18.5h147l73-87h240l73 87h147q23 0 41.5 18.5T880 363v513q0 24-18.5 42T820 936H140Zm680-60V363H645l-73-87H388l-73 87H140v513h680ZM480 620Z"/></svg>
+        </div>
+        <div class="Y2K-media-production Y2K-subject-description">
+            <h1>Media Production</h1>
+            <p>Creating various visual media like images, videos, graphics, to engage and communicate with audiences</p>
+        </div>
+
+        <div class="Y2K-front-end-development Y2K-subject-bubble" onclick="moveBubble(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M334 936v-60h86V776H140q-24 0-42-18t-18-42V276q0-24 18-42t42-18h680q24 0 42 18t18 42v440q0 24-18 42t-42 18H540v100h86v60H334ZM140 716h680V276H140v440Zm0 0V276v440Z"/></svg>
+        </div>
+        <div class="Y2K-front-end-development Y2K-subject-description">
+            <h1>Front End Development</h1>
+            <p>Using code to implement designs as well as adding various functionality to them</p>
+        </div>
+
+        <div class="Y2K-placeholder-bubble remove">
+            <div class="Y2K-placeholder-bubble-content fade-out">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" class="Y2K-close-bubble" onclick="closeAssignments()"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" class="Y2K-back-bubble remove" onclick="backAssignments()"><path d="M480 896 160 576l320-320 42 42-248 248h526v60H274l248 248-42 42Z"/></svg>
+                <div class="Y2K-assignment-container">
+                    <div class="Y2K-assignment" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/jinx cat 2.webp" alt="">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>TITLE</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam in earum quibusdam odit, suscipit asperiores quas quam quisquam molestiae cupiditate impedit, quidem delectus, eveniet illum!</p>
+                        </div>
+                    </div>
+
+                    <div class="Y2K-assignment Y2K-media-production-assignment" id="cat-poster" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/pusheencafe13.jpg" alt="" data-copyright="https://danielfooddiary.com/2018/12/15/pusheencafe/">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Cat poster</h2>
+                            <p>A poster for advertising a cat cafe</p>
+                        </div>
+                    </div>
+
+                    <div class="Y2K-assignment Y2K-media-production-assignment" id="color-poster" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/Colouring_pencils.jpg" alt="" data-copyright="https://en.wikipedia.org/wiki/Color">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Color poster</h2>
+                            <p>A poster about colors</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-media-production-assignment" id="indesign-layout" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/begin-layout-design-intro_900x506.jpg.img.jpg" alt="" data-copyright="https://helpx.adobe.com/mt/illustrator/how-to/begin-layout-design.html">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Layout in Adobe indesign</h2>
+                            <p>A layout for the different types of chairs found at Fontys R10 building</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-media-production-assignment" id="logo-assignment" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/Logos_Blog.jpg" alt="" data-copyright="https://www.designstreet.com.au/logo-designs/">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Logo</h2>
+                            <p>A design of the logo I'm using for my portfolio with explanation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-media-production-assignment" id="photobook" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/360_F_489276689_6AwVRll8hqXeVcAPrX9fx0AszKWWu6kW.jpg" alt="" data-copyright="Tom Sarraipo">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Photobook</h2>
+                            <p>A collection of photo challenges in a photo book</p>
+                        </div>
+                    </div>
+
+                    <div class="Y2K-assignment Y2K-media-production-assignment" id="doccumentary" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/46f37601-8d19-47c4-b43e-a3d9d048c514.png" alt="" data-copyright="https://support.microsoft.com/nl-nl/topic/how-to-brighten-or-darken-a-video-4c071ccb-379f-4503-9455-986380f66360">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Video production</h2>
+                            <p>A short doccumentary style video I produced with a team</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="async-code" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/freeCodeCamp-Cover-2.png" alt="" data-copyright="https://www.freecodecamp.org/news/synchronous-vs-asynchronous-in-javascript/">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Asynchronous code</h2>
+                            <p>A simple exercise where I use asynchronous code to fetch some data from a file</p>
+                        </div>
+                    </div>
+
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="hermes-site" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/hermes.png" alt="" data-copyright="Hermes.nl">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Hermes site</h2>
+                            <p>Recreating the site for Hermes.nl from scratch</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="rgb-validator" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/ms-paint-color-wheel.png" alt="" data-copyright="Microsoft Paint">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>RGB(A) Code validator</h2>
+                            <p>A validator that verifies and previews your rgb(a) code</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="pig-latin" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/ZnO pig blog-min.jpg" alt="" data-copyright="https://www.alltech.com/blog/holistic-approach-zinc-oxide-free-piglet-diet">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Pig latin translator</h2>
+                            <p>A translator that outputs text you've entered into pig latin</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="clock" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/GmYZf5CpPSnqeDWPCRjD_4x.webp" alt="" data-copyright="https://creator.nightcafe.studio/creation/GmYZf5CpPSnqeDWPCRjD">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Analog Clock</h2>
+                            <p>An analog clock that displays the current time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="grid-site" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/grid_site_layout.png" alt="" data-copyright="https://mobirise.com/extensions/resumeamp/webDesigner/">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Grid site</h2>
+                            <p>Recreating a portfolio website with a grid layout</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="currency-exchange" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/ICE_2022-TMv_Photo_resized-crop_custom_1800x1350_at_349.4-439.4.jpg" alt="" data-copyright="https://www.waa.ca/en/passengers/at-ywg/services/view-service/9/ice-international-currency-exchange/">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Currency exchange</h2>
+                            <p>A program you can use to see how much your money is worth in other currecnies</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="guessing-game" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/unnamed.png" alt="" data-copyright="https://play.google.com/store/apps/details?id=com.inspiredsquare.number&hl=en_US&pli=1">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Guessing game</h2>
+                            <p>A game where you try and guess the number player with 2 players</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="matching-game" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/unnamed (1).png" alt="" data-copyright="https://play.google.com/store/apps/details?id=matching.pairs.memory.game&hl=en">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Matching game</h2>
+                            <p>A matching game where you try to match face down cards with each other</p>
+                        </div>
+                    </div>
+
+                    <div class="Y2K-assignment Y2K-front-end-development-assignment" id="weather-app" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/3-9-Extended-Forecast.webp" alt="" data-copyright="https://www.upmatters.com/weather/local-3-mondays-weather-forecast-3-9-2020/">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Weather App</h2>
+                            <p>A weather application that shows you 3 days of weather forecast</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-user-centered-design-assignment" id="good-bad-ux" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/good-design-vs-bad-design-great-ux-examples-to-learn-from-thumb-1159.png" alt="" data-copyright="https://www.thence.co/blogs/ux/good-design-vs-bad-design-great-ux-examples-to-learn-from">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Example of Good/Bad UX</h2>
+                            <p>A showcase of one good and one bad UX design</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-user-centered-design-assignment" id="empathy-map" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/empathy-map-structure.jpg" alt="" data-copyright="https://www.nngroup.com/articles/using-empathy-maps/">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Empathy map</h2>
+                            <p>An empathy map for a person looking for a new job</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-user-centered-design-assignment" id="customer-journey" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/DL_CustomerJourney_V2.webp" alt="" data-copyright="https://www.decisionlink.com/blog/the-importance-of-customer-journey-mapping">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Customer journey</h2>
+                            <p>A customer journey map for a person buying a new phone</p>
+                        </div>
+                    </div>
+                    
+                    <div class="Y2K-assignment Y2K-user-centered-design-assignment" id="interaction-design" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/youtube-website^2006^most-watched-videos.jpg" alt="" data-copyright="https://www.versionmuseum.com/history-of/youtube-website">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Interaction design</h2>
+                            <p>A small demo of an online shop where you navigate and purchase some items</p>
+                        </div>
+                    </div>
+
+                    <div class="Y2K-assignment Y2K-user-centered-design-assignment" id="lxd-comparison" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/62066e2da1c38196476034.png" alt="" data-copyright="https://streamscharts.com/news/streaming-on-twitch-vs-youtube">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>lxD Comparison</h2>
+                            <p>Comparing two similar websites based on how easy it is to accomplish tasks</p>
+                        </div>
+                    </div>
+
+                    <div class="Y2K-assignment Y2K-user-centered-design-assignment" id="heuristic-evaluation" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/1__qigGGtnZX2LSKkapTTCsA.png" alt="" data-copyright="https://medium.com/pixians/heuristic-evaluation-process-and-importance-88c16389fec9">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Heuristic evaluation</h2>
+                            <p>A heuristic evaluation based a mobile game</p>
+                        </div>
+                    </div>
+
+                    <div class="Y2K-assignment Y2K-user-centered-design-assignment" id="card-sorting" onclick="loadAssignment(this)">
+                        <div class="Y2K-assignment-thumbnail">
+                            <img src="img/3-img-cardsortinternal-lrg-opt.jpg" alt="" data-copyright="https://www.smashingmagazine.com/2014/10/improving-information-architecture-card-sorting-beginners-guide/">
+                        </div>
+                        <div class="Y2K-assignment-summary">
+                            <h2>Card Sorting</h2>
+                            <p>Sorting various cards into different categories</p>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <!-- <div class="Y2K-assignment-page">
+                    <div class="Y2K-image-gallery-container">
+                        <div class="Y2K-gallery-image" onclick="openImage(this)">
+                            <img src="img/jinx cat 2.webp" alt="">
+                        </div>
+                        <div class="Y2K-gallery-images-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                            <div class="Y2K-gallery-images">
+                                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                                    <img src="img/jinx cat 2.webp" alt="">
+                                </div>
+                                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                                    <img src="img/jinx cat.png" alt="">
+                                </div>
+                                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                                    <img src="img/jinx cat1.png" alt="">
+                                </div>
+                                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                                    <img src="img/jinx cat2.png" alt="">
+                                </div>
+                                <div class="Y2K-gallery-image-thumbnail"></div>
+                                <div class="Y2K-gallery-image-thumbnail"></div>
+                                <div class="Y2K-gallery-image-thumbnail"></div>
+                                <div class="Y2K-gallery-image-thumbnail"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Y2K-assignment-text">
+                        <h2>Hi</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat at non commodi odio error consectetur!</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        var assignment_container = $(".Y2K-assignment-container")
+        
+        // var for all subject bubbles and their description
+        var all_subjects = $(".Y2K-subject-description, .Y2K-subject-bubble")
+
+        // invisible placeholder bubble in the middle that holds assignments
+        var placeholder_bubble = $(".Y2K-placeholder-bubble")
+
+        // onclick expand placeholder bubble
+        function changeBubble(el){
+            if($(el).hasClass("Y2K-expand-bubble-content")){
+                $(el).toggleClass("Y2K-expand-bubble-content")
+            } else{
+                $(el).toggleClass("Y2K-expand-bubble-content")
+            }
+        }
+
+        // move clicked on subject bubble to the middle and shows assignments page
+        function moveBubble(el){
+            if($(el).hasClass("Y2K-close-bubble")){
+                $(el).removeClass("Y2K-UCD-move-middle Y2K-MP-move-middle Y2K-FED-move-middle")
+                $(".fade-out").removeClass("fade-out")
+                $(all_subjects).each((index,element) => {
+                    $(element).removeClass("hide")
+                });
+            } else{
+                // class name of the subject clicked
+                var bubble_class_name = $(el).attr("class").replace(" Y2K-subject-bubble","")
+
+                // all other subjects/descriptions
+                var other_bubbles = all_subjects.filter((index, item) => item !== el)
+
+                // moves bubble to the middle
+                $(el).addClass(`${bubble_class_name}-move-middle`)
+                
+                // hides other bubbles and descriptions
+                $(other_bubbles).each((index,element) => {
+                    $(element).addClass("hide")
+                });
+
+                // swaps placeholder bubble and subject bubble
+                setTimeout(() => {
+                    $(placeholder_bubble).removeClass("remove")
+                }, 900);
+
+                $(".Y2K-assignment").each((index,el) => {
+                    $(el).hasClass(`${bubble_class_name}-assignment`) ? $(el).removeClass("remove") : $(el).addClass("remove");
+                })
+
+
+                // expands placeholder bubble
+                setTimeout((element = el) => {
+                    $(".Y2K-placeholder-bubble").removeClass("fade-out")
+                    $(el).addClass("remove")
+                    $(placeholder_bubble).addClass("Y2K-expand-bubble-content")
+                    setTimeout(() => {
+                        $(".Y2K-placeholder-bubble-content").removeClass("fade-out")
+                    }, 1000);
+                }, 1500);
+            }
+        }
+
+        //container for the images
+        var gallery_images_container
+
+        // image container height
+        var gallery_images_container_height
+
+        //scrollable images
+        var gallery_images
+        
+        // scrollable images height
+        var gallery_images_height
+
+        // offset for the scroll of the gallery
+        var gallery_offset
+        
+
+        // sets values for the gallery images when assignment page is called
+        function updateGalleryVars(){
+            gallery_images_container = $(".Y2K-gallery-images-container")
+            gallery_images_container_height = document.getElementsByClassName("Y2K-gallery-images-container")[0].clientHeight
+            gallery_images = $(".Y2K-gallery-images")
+            gallery_images_height = document.getElementsByClassName("Y2K-gallery-images")[0].clientHeight
+            gallery_offset = 0
+            
+            $(".Y2K-gallery-image").find("img").attr("src",$(".active-image").find("img").attr("src"))
+        }
+
+        // scrolling up on image gallery
+        function goUp(el){
+            if(gallery_offset < -50){
+                gallery_offset += 50;
+                $(gallery_images).css("transform",`translateY(${gallery_offset}px)`)
+            }else {
+                gallery_offset = 0;
+                $(gallery_images).css("transform",`translateY(${gallery_offset}px)`)
+            }
+        }
+
+        // scrolling down on image gallery
+        function goDown(el){
+            if((gallery_images_height - gallery_images_container_height) - Math.abs(gallery_offset) > 50){
+                gallery_offset -= 50;
+                $(gallery_images).css("transform",`translateY(${gallery_offset}px)`)
+            }else {
+                gallery_offset = ((gallery_images_height - gallery_images_container_height) + 25) *-1
+                $(gallery_images).css("transform",`translateY(${gallery_offset}px)`)
+            }
+            // var cur_gallery_offset = parseInt($(gallery_images_container).css('transform').split(',')[5]);
+        }
+
+        // puts active image to the big preview
+        function imageFunc(el){
+            // gets image that's clicked on
+            var image_location = $(el).find("img").attr("src")
+
+            // sets enlarged image to be the same as the active one
+            $(".Y2K-gallery-image").find("img").attr("src",image_location)
+
+            // removes the active-image status from the previous image and adds it to the current
+            $(".active-image").removeClass("active-image")
+            $(el).addClass("active-image")
+        }
+
+        // opens big preview image on a new tab
+        function openImage(el){
+            window.open($(el).find("img")[0].src, "_blank")
+        }
+        
+        // hide assignments container
+        function loadAssignment(el){
+
+            // slides and removes assignment container
+            $(assignment_container).addClass("hide-left")
+            setTimeout((clicked_assignment = el) => {
+                $(assignment_container).addClass("remove")
+                $(".Y2K-close-bubble").addClass("remove")
+                $(".Y2K-back-bubble").removeClass("remove")
+
+                // httmp request that loads assignment content
+                let xhttp;
+
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4){
+                        if (this.status == 200){
+
+                            $(".Y2K-placeholder-bubble-content").append($.parseHTML(this.responseText));
+                            
+                            setTimeout(() => {
+                                $(".Y2K-assignment-page").removeClass("hide-right")
+                            }, 100);
+                            
+                            hljs.highlightAll();
+
+                            // updates gallery vars
+                            updateGalleryVars();
+
+                            // removes arrows if not enough images
+                            if(gallery_images_height <= gallery_images_container_height){
+                                $(".Y2K-gallery-arrow-up").remove();
+                                $(".Y2K-gallery-arrow-down").remove();
+                            }
+
+                        } else if(this.status == 400){
+                            alert("Failed loading page")
+                        }
+                    }
+                }
+
+                xhttp.open("GET",`assignments/${clicked_assignment.id}.txt`, true);
+                xhttp.send();
+            }, 750);
+        }
+
+        function backAssignments(){
+            $(".Y2K-assignment-page").addClass("hide-right")
+            
+            setTimeout(() => {
+                $(assignment_container).removeClass("remove")
+            }, 750);
+            
+            setTimeout(() => {
+                $(".Y2K-assignment-page").remove();
+                $(assignment_container).removeClass("hide-left")
+                $(".Y2K-close-bubble").removeClass("remove")
+                $(".Y2K-back-bubble").addClass("remove")
+            }, 1000);
+        }
+
+        function closeAssignments(){
+            $(".Y2K-placeholder-bubble-content").addClass("fade-out")
+            
+            setTimeout(() => {
+                $(placeholder_bubble).removeClass("Y2K-expand-bubble-content")
+                $(".Y2K-user-centered-design-move-middle, .Y2K-media-production-move-middle, .Y2K-front-end-development-move-middle").removeClass("remove")
+            }, 500);
+            
+            setTimeout(() => {
+                $(placeholder_bubble).addClass("remove")
+                $(".Y2K-user-centered-design-move-middle, .Y2K-media-production-move-middle, .Y2K-front-end-development-move-middle").removeClass("Y2K-user-centered-design-move-middle Y2K-media-production-move-middle Y2K-front-end-development-move-middle")
+                $(all_subjects).each((index,el)=>{
+                    $(el).removeClass("hide")
+                })
+            }, 1500);
+
+        }
+
+        function loadTextImage(el){
+            $(".active-image").removeClass("active-image")
+            $($(".Y2K-gallery-image-thumbnail")[el.textContent.slice(1,-1) - 1]).addClass("active-image")
+            $(".Y2K-gallery-image").find("img").attr("src",$(".active-image").find("img").attr("src"))
+        }
+    </script>
+<footer>@ 2023 Yavor Aldev</footer>
+</body>
+</html>

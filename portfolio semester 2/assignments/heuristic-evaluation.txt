@@ -1,0 +1,32 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-image-gallery-container">
+        <div class="Y2K-gallery-image" onclick="openImage(this)">
+            <img src="" alt="">
+        </div>
+        <div class="Y2K-gallery-images-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+            <div class="Y2K-gallery-images">
+                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                    <img src="img/heuristic_1.png" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/heuristic_2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Y2K-assignment-text">
+        <h2>Heuristic evaluation</h2>
+
+        <p>In this assignemnt, I've made a heuristic evaluation about the mobile game Fire Emblem heroes</p>
+
+        <p>In it I evaluate the game based on Jakob Nielsen's 10 heuristic principles</p>
+        
+        <p>You can download the presentation I've made about it by clicking the button bellow</p>
+
+        <a href="img/Heuristic-Evaluation-Fire-Emblem-Heroes.pptx" download>
+            <button style="margin-top: 50px; margin-bottom: 50px;">Download Presentation</button>
+        </a>
+    </div>
+</div>

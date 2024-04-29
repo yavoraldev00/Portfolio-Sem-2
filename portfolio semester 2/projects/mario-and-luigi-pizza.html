@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tokyo-night-dark.min.css">
+    <link rel="stylesheet" href="../img/style.css">
+    
+    <title>Mario and Luigi Pizza - Portfolio</title>
+
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.open('../index.html','_self')">
+            <img src="../img/pencil.svg" alt="">
+        </div>
+        <nav class="header-navigation">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../work.html">Work</a></li>
+                <li><a href="../about-me.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="assignment-page">
+        <div class="Y2K-image-gallery-container">
+            <div class="Y2K-gallery-image" onclick="openImage(this)">
+                <img src="" alt="">
+            </div>
+            <div class="Y2K-gallery-images-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-left" id="left-arrow-gallery" onclick="goLeft(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-right" id="right-arrow-gallery" onclick="goRight(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <div class="Y2K-gallery-images">
+                    <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                        <img src="../img/mario1.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/project_timeline_2.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/proto_1.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/proto_2.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/proto_3.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/proto_4.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/proto_5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assignment-text">
+            <h1>Mario and Luigi Pizza</h1>
+
+            <div class="personal-contribution">
+                <p>This is a project I had in semester 1 in my studies before choosing a profile</p>
+            </div>
+
+            <p>In it, we made a website for a pizza shop for the legendary pizza makers, Mario and Luigi!</p>
+
+            <p>For it, we made sketches, paper and digital prototypes and documentation on what we are and not going to deliver</p>
+
+            <p>During the research and prototyping phase we discussed what we wanted to make and set limits for what our website would have and not have</p>
+
+            <p>The part I was responsible for was designing and making the order page for the website. While I was taking part in the rest of the process, this was my responsiblity to make</p>
+
+            <p>The main difficulty I had with it was the designing part, since I was busy with figuring out the coding part and removing any bugs I find</p>
+            
+            <p>Since then, I've gotten better at coding since I'm getting more used to it again, but I still have trouble with the designing part and it takes me a while to figure out a nice looking design</p>
+        </div>
+
+    </main>
+
+    <footer>@ 2023 Yavor Aldev</footer>
+
+<script>
+//container for the images
+var gallery_images_container = $(".Y2K-gallery-images-container")
+
+// image container height
+var gallery_images_container_width = document.getElementsByClassName("Y2K-gallery-images-container")[0].clientWidth
+
+//scrollable images
+var gallery_images = $(".Y2K-gallery-images")
+
+// scrollable images height
+var gallery_images_width = document.getElementsByClassName("Y2K-gallery-images")[0].clientWidth
+
+// offset for the scroll of the gallery
+var gallery_offset = 0
+
+$(".Y2K-gallery-image").find("img").attr("src",$(".active-image").find("img").attr("src"))
+
+// scrolling up on image gallery
+function goLeft(el){
+    if(gallery_offset < -100){
+        gallery_offset += 100;
+        $(gallery_images).css("transform",`translateX(${gallery_offset}px)`)
+    }else {
+        gallery_offset = 0;
+        $(gallery_images).css("transform",`translateX(${gallery_offset}px)`)
+    }
+}
+
+// scrolling down on image gallery
+function goRight(el){
+    if((gallery_images_width - gallery_images_container_width) - Math.abs(gallery_offset) > 100){
+        gallery_offset -= 100;
+        $(gallery_images).css("transform",`translateX(${gallery_offset}px)`)
+    }else {
+        gallery_offset = ((gallery_images_width - gallery_images_container_width) + 25) *-1
+        $(gallery_images).css("transform",`translateX(${gallery_offset}px)`)
+    }
+    // var cur_gallery_offset = parseInt($(gallery_images_container).css('transform').split(',')[5]);
+}
+
+// puts active image to the big preview
+function imageFunc(el){
+    // gets image that's clicked on
+    var image_location = $(el).find("img").attr("src")
+
+    // sets enlarged image to be the same as the active one
+    $(".Y2K-gallery-image").find("img").attr("src",image_location)
+
+    // removes the active-image status from the previous image and adds it to the current
+    $(".active-image").removeClass("active-image")
+    $(el).addClass("active-image")
+}
+
+// opens big preview image on a new tab
+function openImage(el){
+    window.open($(el).find("img")[0].src, "_blank")
+}
+
+function loadTextImage(el){
+    $(".active-image").removeClass("active-image")
+    $($(".Y2K-gallery-image-thumbnail")[el.textContent.slice(1,-1) - 1]).addClass("active-image")
+    $(".Y2K-gallery-image").find("img").attr("src",$(".active-image").find("img").attr("src"))
+}
+
+</script>
+</body>
+</html>

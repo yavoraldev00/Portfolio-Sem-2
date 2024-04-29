@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Asynchronous functions</title>
+</head>
+<body>
+
+<div class="text-container">
+    <p>I am hard coded text :)</p>
+</div>
+
+<script>
+var test_2
+
+window.onload = function(){
+
+    //jquery
+    $.get("files/dummy.json", function(data){
+        console.log(data)
+        $(".text-container").append(`<p>I was written first!! Here is the final word in my file ${data.words[2].word}</p>`)
+    })
+
+    //javascript
+    const http = new XMLHttpRequest();
+
+    //when status on request updates
+    http.onreadystatechange = function(){
+        console.log(http);
+        if(http.readyState == 4 && http.status == 200){
+            var data = JSON.parse(http.response)
+            var file_content = [];
+            data.words.forEach(function(el){file_content.push((el.word))})
+            $(".text-container").append(`<p>I was written second! I'm probably third because I'm an async function! I'm reading a file here are the contents ${file_content}</p>`)
+        }
+    };
+
+    //sending the request with vanilla js
+    http.open("GET", "files/dummy.json", true);
+    http.send();
+
+    //not async
+    $(".text-container").append("<p>I was written third but I'm probably seen earlier. I was not written synchronously!</p>")
+};
+</script>
+
+</body>
+</html>

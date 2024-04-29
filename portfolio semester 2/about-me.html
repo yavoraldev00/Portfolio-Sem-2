@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tokyo-night-dark.min.css">
+    <link rel="stylesheet" href="img/style.css">
+    <title>Assignments - Portfolio</title>
+<style>
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.open('index.html','_self')">
+            <img src="img/pencil.svg" alt="">
+        </div>
+        <nav class="header-navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="about-me-page">
+        <div class="picture-background-container">
+
+        </div>
+
+        <div class="content">
+            <div class="content-text">
+                <h1>About me</h1>
+                
+                <div class="about-me-content-text-box">
+                    <p style="font-size: 24px;">Hello!</p>
+                    
+                    <p>I'm Yavor, I'm 23 and this is my portfolio for semester 2 of my studies at Fontys</p>
+                    <p>In this portfolio I have a lot more assignments compared to my previous portfolio, as well as me trying to create a more engaging design with more going on visually and technically</p>
+                    <p>In the future, I would like to be able to improve my design skills so I can create something even more complex and better!</p>
+                    <p>But for now, please look around and what I've managed to achieve this semester :)</p>
+                </div>
+            </div>
+
+            <div class="content-image">
+                <div class="about-me-page-image-container">
+                    <div class="next-image">
+                        <img src="img/about-me-2.jpg" alt="" srcset="">
+                    </div>
+                    <div class="current-image">
+                        <img src="img/about-me-1.jpg" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>@ 2023 Yavor Aldev</footer>
+
+<script>
+var currentImage = $(".current-image").find("img")
+var nextImage = $(".next-image").find("img")
+
+// array shuffle function
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array.slice(0,9);
+}
+
+// random number generator
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// makes an array, shuffles it and adds 9 images with that name
+var images_to_load = Array.from({ length: 13 }, (_, index) => index + 1);
+
+images_to_load = shuffleArray(images_to_load)
+
+images_to_load.forEach((el)=>{
+    $(".picture-background-container").append(`<img class="" src="img/photos/camera_${el}.JPG" alt="image_${el}" srcset="">`)
+})
+
+// random placement for images
+var randomOrder = function(element) {
+    
+    // Viewport Dimensions
+    var vpHeight = window.innerHeight;
+    var vpWidth = window.innerWidth;
+    
+    // Image Position
+    var xPos = getRandomInt(0, vpWidth - element.offsetWidth);
+    var yPos = getRandomInt(0, vpHeight - element.offsetHeight);
+    var zIndex = getRandomInt(1,5);
+    
+ element.style.cssText += '--x-position:' + xPos + 'px; --y-position:' + yPos + 'px; z-index:-' + zIndex;
+};
+
+// all background images
+var imgs = $(".picture-background-container").find("img")
+
+
+$(imgs).each((index,the_img) => {
+    $(window).on("load",()=> {
+        randomOrder(the_img);
+    });
+});
+
+setInterval(() => {
+    $(imgs).each((index,the_img) => {
+        randomOrder(the_img);
+    }); 
+}, 5000);
+
+setTimeout(() => {
+
+    $(".next-image").addClass("play-flip-animation")
+
+    setTimeout(() => {
+        $(currentImage).attr("src",$(nextImage).attr("src"))
+    }, 2500);
+
+    setInterval(() => {
+        setTimeout(() => {
+            $(currentImage).attr("src",$(nextImage).attr("src"))
+        }, 2500);
+        
+        if(Number($(nextImage).attr("src").slice(-5,-4)) == 5){
+            $(nextImage).attr("src","img/about-me-1.jpg")
+        }else {
+            $(nextImage).attr("src",`img/about-me-${Number($(nextImage).attr("src").slice(-5,-4)) + 1}.jpg`)
+        }
+    }, 5000);
+}, 5000);
+</script>
+</body>
+</html>

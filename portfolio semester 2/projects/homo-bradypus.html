@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tokyo-night-dark.min.css">
+    <link rel="stylesheet" href="../img/style.css">
+    
+    <title>Mario and Luigi Pizza - Portfolio</title>
+
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.open('../index.html','_self')">
+            <img src="../img/pencil.svg" alt="">
+        </div>
+        <nav class="header-navigation">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../work.html">Work</a></li>
+                <li><a href="../about-me.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="assignment-page">
+        <div class="Y2K-image-gallery-container">
+            <div class="Y2K-gallery-image" onclick="openImage(this)">
+                <img src="" alt="">
+            </div>
+            <div class="Y2K-gallery-images-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-left" id="left-arrow-gallery" onclick="goLeft(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-right" id="right-arrow-gallery" onclick="goRight(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <div class="Y2K-gallery-images">
+                    <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                        <img src="../img/homo.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo1.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo2.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo3.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo4.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo5.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo6.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo7.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo8.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo9.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo10.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo11.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo12.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo13.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo14.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo15.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo16.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo17.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo18.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo19.gif" alt="" data-copyright="https://elthen.itch.io/2d-pixel-art-cat-sprites">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo20.png" alt="" data-copyright="https://browserboard.com/">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo_code.png" alt="">
+                    </div>
+                    <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                        <img src="../img/homo_code_2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="assignment-text">
+            <h1>Homo bradypous Symbioticus</h1>
+
+
+            <h2>Summary</h2>
+
+            <p>In this project, we are creating a website for Eleni, who is an artist and wants to connect people together and to nature, through art. The main concept she wants to get through to her readers is about homo-bradypous symbioticus – the idea that we are all connected and similar to each other</p>
+
+
+            <h3>Project plan</h3>
+
+            <p>First we made a project plan for the project. We determined the objectives, scope, stakeholders, tasks, schedule and all other necessary parts for creating a project plan</p>
+
+            <div class="personal-contribution">
+                <p>I created a Gantt chart for the ideal flow of our project for all parts along with milestones and dates <span class="in-line-image-link" onclick="loadTextImage(this)">[2]</span></p>
+            </div>
+            
+            <h3>Research Phase</h3>
+            
+            <p>During our research, we had some questions about who to focus our website on, since from the original discussion with Eleni we didn’t get specific enough information to start working and researching more.</p>
+            <p>After some further questions, we discovered the audience for her website was “everybody of all ages and occupations” and that we are designing our website to be mainly used on computers, laptops and tablets.</p>
+            
+            <div class="personal-contribution">
+                <p>(some initial questions me and other team members came up with) <span class="in-line-image-link" onclick="loadTextImage(this)">[3]</span></p>
+            </div>
+
+            <div class="personal-contribution" style="margin-top: 10px;">
+                <p>I also created a OneDrive where we could write down our ideas and keep track of our progress for the project <span class="in-line-image-link" onclick="loadTextImage(this)">[4]</span> <span class="in-line-image-link" onclick="loadTextImage(this)">[5]</span></p>
+            </div>
+            
+            <h3>Design</h3>
+            
+            <div class="personal-contribution">
+                <p>We did card sorting, user scenario and other UX tasks to determine the content of our website and if our initial ideas made sense to users <span class="in-line-image-link" onclick="loadTextImage(this)">[6]</span> <span class="in-line-image-link" onclick="loadTextImage(this)">[7]</span></p>
+            </div>
+            
+            <p>For the logo, we were wondering what direction to go in. First, me and the other discussed it relating to the concept of homo-bradypous and I suggested it should be something regarding the sun or earth since its something that connects us all. We still weren’t sure about what concept to go with so we discussed further.</p>
+            <p>As we discussed, we decided to shift the idea from homo-bradypous to Greek culture, since that’s where Eleni is from. We went through the Greek alphabet and the meaning of every letter. We also translated Eleni’s name and noticed the sun appearing in the meanings, so we decided to go with a drawing of a sun for our logo.</p>
+            
+            <div class="personal-contribution">
+                <p>(ideas me and my teammates had for the logo) <span class="in-line-image-link" onclick="loadTextImage(this)">[8]</span></p>
+            </div>
+
+            <div class="personal-contribution" style="margin-top: 10px;">
+                <p>For the design of the logo, I proposed that we use Greek influences, such as for the colors to be like old Greek building and to use a motif like meander. Or since Eleni is a teacher, I got the idea to have the sun be drawn kind of crudely drawn like a younger child would. <span class="in-line-image-link" onclick="loadTextImage(this)">[9]</span> <span class="in-line-image-link" onclick="loadTextImage(this)">[10]</span> <span class="in-line-image-link" onclick="loadTextImage(this)">[11]</span></p>
+            </div>
+
+            <div class="personal-contribution" style="margin-top: 10px;">
+                <p>For the design of the website, I researched lots of designs that might fit Eleni’s description of an image gallery/archive site. I also made some quick layouts/sketches to discuss with my teammates as to how to design our site. 
+                    <span class="in-line-image-link" onclick="loadTextImage(this)">[12]</span>
+                    <span class="in-line-image-link" onclick="loadTextImage(this)">[13]</span>
+                    <span class="in-line-image-link" onclick="loadTextImage(this)">[14]</span>
+                    <span class="in-line-image-link" onclick="loadTextImage(this)">[15]</span>
+                    <span class="in-line-image-link" onclick="loadTextImage(this)">[16]</span>
+                    <span class="in-line-image-link" onclick="loadTextImage(this)">[17]</span>
+                </p>
+            </div>
+
+            <div class="personal-contribution" style="margin-top: 10px;">
+                <p>I made an image gallery for the website and adjusted it since Eleni wanted a bit of a different design 
+                    <span class="in-line-image-link" onclick="loadTextImage(this)">[18]</span>
+                </p>
+            </div>
+
+            <div class="personal-contribution" style="margin-top: 10px;">
+                <p>Here is some sample code of the image galery <span class="in-line-image-link" onclick="loadTextImage(this)">[22]</span>. In my previous protfolio I also had a carousel image gallery <span class="in-line-image-link" onclick="loadTextImage(this)">[23]</span>. However this time I think it looks far better and functions better as well. In a future project/portfolio I want to make it even more resposive and add features like a zoom on hover.
+                </p>
+            </div>
+
+            <div class="personal-contribution" style="margin-top: 10px;">
+                <p>I implemented some of the page designs my teammates made into HTML pages 
+                    <span class="in-line-image-link" onclick="loadTextImage(this)">[19]</span>
+                </p>
+            </div>
+            
+            <div class="reflection">
+                <h2>Reflection</h2>
+
+                <h3>Personal Work</h3>
+
+                <p>In this project I wasn't as creative as I wanted to be, in the future I want to express myself more and implement interesting ideas</p>
+
+                <p>I did a lot of research into what kind of design I wanted the website to have <span class="in-line-image-link" onclick="loadTextImage(this)">[13]</span> , but in the end two other teammates were responsible for the design with the rest (including me) not doing much in that regard.</p>
+
+                <p>Since I am experiencing some difficulty with coming up with and implementing interesting designs, in my next project I want to be more involved in the designing phase and not just focus on my stronger sides (coding), since I won't be able to make coding intense front-end implementations without designing skills (like advanced aimations for example)</p>
+
+                <p>I also wasn't able to implement some ideas I had in the brainstorming phase</p>
+
+                <p>One idea I had was having pixelated animals playing around on the screen and being able to interact with them (for example they follow your mouse, react when you click on them, they randomly move etc.) <span class="in-line-image-link" onclick="loadTextImage(this)">[20]</span></p>
+
+                <p>Another idea I had was for a drawing board, since one of the websites we used as reference is <a href="https://futurefarmers.com" target="_blank" style="color: #4c4cf3;">futurefarmers.com</a> wich has some fun and playful elements (like the flying bird on screen as well as some notes you can move around, view and close). I wanted to have a drawing board where you could draw images and leave them as little notes for other people to view <span class="in-line-image-link" onclick="loadTextImage(this)">[21]</span>, and maybe even add something to them for the next person visiting. This could be a fun way for people to interact with one another without having a direct form of communicatio like a comment section or direct messages</p>
+
+                <p>One final idea I had was for various ambiet sounds playing while you're using the site, like water droplets, rain and wind blowing and having accompanying visual effects to enchance the experience</p>
+
+                <p>Sadly, I had too many assignments and problems with designing my own portfolio, so I didn't have time to add the features I wanted to include</p>
+
+                <p>In the future I want to improve my designing skills so I can have more time for other aspects, such as research and implementation</p>
+
+                <h3>Team Work</h3>
+
+                <p>As a whole, I think I worked with my team better than I did in my last project. We were much more cautious of the deadline and made everything in time. We also had good communication and were always discussing how our project is progressing. We were asking and receiving feedback for our projects from teachers and our client.</p>
+
+                <p>However, I think our team could have done better with the site. We could have added more features into the site. The design looks good, but more functionaly would have made it more engaging and memorable.</p>
+
+                <p>In the future I would like to inspire my team to make a better site and add more interesting and unique things to it, if there's enough time for it of course</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>@ 2023 Yavor Aldev</footer>
+
+<script>
+//container for the images
+var gallery_images_container = $(".Y2K-gallery-images-container")
+
+// image container height
+var gallery_images_container_width = document.getElementsByClassName("Y2K-gallery-images-container")[0].clientWidth
+
+//scrollable images
+var gallery_images = $(".Y2K-gallery-images")
+
+// scrollable images height
+var gallery_images_width = document.getElementsByClassName("Y2K-gallery-images")[0].clientWidth
+
+// offset for the scroll of the gallery
+var gallery_offset = 0
+
+$(".Y2K-gallery-image").find("img").attr("src",$(".active-image").find("img").attr("src"))
+
+// scrolling up on image gallery
+function goLeft(el){
+    if(gallery_offset < -100){
+        gallery_offset += 100;
+        $(gallery_images).css("transform",`translateX(${gallery_offset}px)`)
+    }else {
+        gallery_offset = 0;
+        $(gallery_images).css("transform",`translateX(${gallery_offset}px)`)
+    }
+}
+
+// scrolling down on image gallery
+function goRight(el){
+    if((gallery_images_width - gallery_images_container_width) - Math.abs(gallery_offset) > 100){
+        gallery_offset -= 100;
+        $(gallery_images).css("transform",`translateX(${gallery_offset}px)`)
+    }else {
+        gallery_offset = ((gallery_images_width - gallery_images_container_width) + 25) *-1
+        $(gallery_images).css("transform",`translateX(${gallery_offset}px)`)
+    }
+    // var cur_gallery_offset = parseInt($(gallery_images_container).css('transform').split(',')[5]);
+}
+
+// puts active image to the big preview
+function imageFunc(el){
+    // gets image that's clicked on
+    var image_location = $(el).find("img").attr("src")
+
+    // sets enlarged image to be the same as the active one
+    $(".Y2K-gallery-image").find("img").attr("src",image_location)
+
+    // removes the active-image status from the previous image and adds it to the current
+    $(".active-image").removeClass("active-image")
+    $(el).addClass("active-image")
+}
+
+// opens big preview image on a new tab
+function openImage(el){
+    window.open($(el).find("img")[0].src, "_blank")
+}
+// loads the thumbnail image into the big preview
+function loadTextImage(el){
+    $(".active-image").removeClass("active-image")
+    $($(".Y2K-gallery-image-thumbnail")[el.textContent.slice(1,-1) - 1]).addClass("active-image")
+    $(".Y2K-gallery-image").find("img").attr("src",$(".active-image").find("img").attr("src"))
+}
+
+$(document).ready(function() {
+        // Get the image container
+        var imageContainer = $(".Y2K-image-gallery-container");
+
+        // Create a new Intersection Observer
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                // Check if the bottom of the header is no longer visible
+                if (entry.boundingClientRect.bottom <= 0) {
+                    // Add 100px padding-top to the image container
+                    imageContainer.css("padding-top", "100px");
+                } else {
+                    // Remove the padding-top
+                    imageContainer.css("padding-top", "");
+                }
+            });
+        });
+
+        // Observe the header element
+        var header = $("header")[0];
+        observer.observe(header);
+    });
+</script>
+</body>
+</html>

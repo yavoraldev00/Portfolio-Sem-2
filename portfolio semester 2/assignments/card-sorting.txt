@@ -1,0 +1,48 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-image-gallery-container">
+        <div class="Y2K-gallery-image" onclick="openImage(this)">
+            <img src="" alt="">
+        </div>
+        <div class="Y2K-gallery-images-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+            <div class="Y2K-gallery-images">
+                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                    <img src="img/card_sorting_1.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/card_sorting_2.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/card_sorting_3.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/card_sorting_4.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/card_sorting_5.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/card_sorting_6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Y2K-assignment-text">
+        <h2>Cardsorting</h2>
+
+        <p>Card sorting is a user-centered method used in user experience (UX) design to organize information. It involves participants sorting content or ideas into categories on physical or virtual cards. The process helps uncover patterns, groupings, and user mental models, aiding in the creation of intuitive information structures for websites, applications, or other systems.</p>
+
+        <p>I participated in two card sorting sessions, one where I was a moderator and one where I was a participant. Both of the sessions involved closed card sorting where the categories are pre-determined and you have to select which category a card goes into</p>
+        
+        <p>The session where I was a moderator me, Gessa and Wilson looked up different video game genres and a category they belong in (Action, RPG, Racing, Simulation etc.)</p>
+
+        <p>The participants were Ana and Mirena, who were matching the cards to the different categories. <span class="in-line-image-link" onclick="loadTextImage(this)">[1]</span> <span class="in-line-image-link" onclick="loadTextImage(this)">[2]</span> <span class="in-line-image-link" onclick="loadTextImage(this)">[3]</span> Since they weren't gamers they didn't know which game genre was in which category so it was a challenge for them to categorize them</p>
+
+        <p>In the end most of the cards were matched correctly, however there was some mix-up in some cards <span class="in-line-image-link" onclick="loadTextImage(this)">[4]</span></p> 
+
+        <p>The session where I was a participant had me sorting different products relating to body care and beauty. Since I'm not entirely familiar with skincare items, I was confused at the similar sounding categories and ended up putting a lot of cards in one category <span class="in-line-image-link" onclick="loadTextImage(this)">[5]</span> <span class="in-line-image-link" onclick="loadTextImage(this)">[6]</span></p>
+    
+        <p>Overall, from this exercise I learned that it's important to make conceince categories that even non-users can navigate your site without difficulty</p>
+    </div>
+</div>

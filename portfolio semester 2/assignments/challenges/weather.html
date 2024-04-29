@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Weather forecast</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    .remove {
+        display: none !important;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    .weather-request-parameters {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .weather-info {
+        text-align: center;
+    }
+    
+    .card-container {
+        height: 70vh;
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 25px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .weather-card {
+        border: 3px solid gray;
+        border-radius: 25px;
+    }
+    
+    .weather-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 40%;
+        background-color: #f1f1f1;
+        border-bottom: 2px solid black;
+        border-radius: 22px 22px 0 0;
+    }
+    
+    .weather-image img {
+        height: 100%;
+        width: auto;
+    }
+    
+    .weather-details {
+        background-color: #f8f8f8;
+        height: calc(60% - 2px);
+        border-radius: 0 0 22px 22px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .temperature {
+        margin: 0;
+        padding: 10px 0;
+        font-size: 32px;
+        font-weight: bold;
+    }
+    
+    .temp-range {
+        margin: 0;
+        font-size: 14px;
+    }
+    
+    .rain-chance {
+        margin: 0;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .wind-speed {
+        margin: 0;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .error-msg {
+        text-align: center;
+        color: red;
+        margin-top: 20px;
+    }
+
+    .city-name {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .country-name {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .temp-range {
+        margin: 0;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .temp-range span {
+        font-weight: bold;
+    }
+
+    .temperature svg,
+    .rain-chance svg,
+    .wind-speed svg {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        height: 32px;
+        width: 32px;
+    }
+
+    .temp-range svg {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        height: 28px;
+        width: 28px;
+    }
+
+    .weather-details p {
+        margin: 10px 0;
+    }
+
+    .weather-details p.temperature {
+        padding-top: 20px;
+        font-size: 24px;
+    }
+
+    .weather-details p.temp-range {
+        font-size: 14px;
+    }
+
+    .weather-details p.rain-chance,
+    .weather-details p.wind-speed {
+        font-size: 12px;
+    }
+
+</style>
+<body>
+
+<h1>Weather forecast</h1>
+
+<div class="weather-request-parameters">
+    <label for="city_name_requested">City name</label>
+    <input type="text" name="city_name_requested" id="city_name_requested" size="8">
+    <button onclick="getWeather()">Get weather</button>
+</div>
+<div class="weather-info remove">
+    <h2 class="city-name">Sofia</h2>
+    <p class="country-name">Bulgaria</p>
+    <div class="card-container">
+        <div class="weather-card">
+            <div class="weather-image">
+                <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="">
+                <p>Partly cloudy</p>
+            </div>
+            <div class="weather-details">
+                <p class="temperature">avg <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M480-80q-83 0-141.5-58.5T280-280q0-51 23-96t68-67v-328q0-45.417 31.792-77.208Q434.583-880 480-880t77.208 31.792Q589-816.417 589-771v328q45 22 68 67t23 96q0 83-58.5 141.5T480-80Zm-49-435h98v-53h-49v-39h49v-87h-49v-38.5h49V-771q0-20.825-14.123-34.912-14.123-14.088-35-14.088Q459-820 445-805.912 431-791.825 431-771v256Z"/></svg></p>
+                <span class="min-temp"></span> - <span class="max-temp"></span>
+                <p><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M479-208q16 0 24.5-5.5T512-230q0-11-8.5-17t-25.5-6q-42 0-85.5-26.5T337-373q-2-9-9-14.5t-15-5.5q-11 0-17 8.5t-4 17.5q15 84 71 121.5T479-208Zm1 128q-137 0-228.5-94T160-408q0-100 79.5-217.5T480-880q161 137 240.5 254.5T800-408q0 140-91.5 234T480-80Zm0-60q112 0 186-76.5T740-408q0-79-66.5-179.5T480-800Q353-688 286.5-587.5T220-408q0 115 74 191.5T480-140Zm0-340Z"/></svg> % </p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M465-160q-54 0-85.5-28T348-273h68q0 26 11.5 39.5T465-220q27 0 38.5-12t11.5-41q0-29-11.5-42.5T465-329H80v-60h385q54 0 82 28t28 88q0 57-28 85t-82 28ZM80-568v-60h548q37 0 54-17.5t17-58.5q0-41-17-58.5T628-780q-38 0-55 20.5T556-708h-60q0-58 35-95t97-37q61 0 96 35.5T759-704q0 65-35 100.5T628-568H80Zm672 330v-60q35 0 51.5-19.5T820-374q0-38-18.5-55T748-446H80v-60h668q62 0 97 35t35 97q0 64-33 100t-95 36Z"/></svg> km/h</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="error-msg remove">No such city was found, please try another</div>
+
+<script>
+
+// API call to get weather for city
+function getWeather(){
+    // removes error msg and clears previous data
+    $(".error-msg").addClass("remove")
+    $(".card-container").empty()
+    $(".weather-info").removeClass("remove")
+    
+    // value for entered city
+    var city = $("#city_name_requested").val()
+
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=77fa8473fe134491a68150515232605&q=${city}&days=3&aqi=no&alerts=no`)
+    .then(response => {
+        if (!response.ok) {
+            debugger;
+            $(".error-msg").removeClass("remove")
+            $(".weather-info").addClass("remove")
+            throw new Error('Request failed with status: ' + response.status);
+        }
+        return response.json();
+    })
+
+    .then(data => {
+        // changes city name and country name
+        $(".city-name").text(data.location.name)
+        $(".country-name").text(data.location.country)
+        
+        // displays the container
+        $(".card-container").removeClass("remove")
+
+        // adds 3 days worth of weather data
+        data.forecast.forecastday.forEach(element => {
+            $(".card-container").append(`
+            <div class="weather-card">
+                <div class="weather-image">
+                    <img src="https:${element.day.condition.icon}" alt="">
+                    <p>${element.day.condition.text}</p>
+                </div>
+                <div class="weather-details">
+                    <p class="temperature">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                            <path d="M480-80q-83 0-141.5-58.5T280-280q0-51 23-96t68-67v-328q0-45.417 31.792-77.208Q434.583-880 480-880t77.208 31.792Q589-816.417 589-771v328q45 22 68 67t23 96q0 83-58.5 141.5T480-80Zm-49-435h98v-53h-49v-39h49v-87h-49v-38.5h49V-771q0-20.825-14.123-34.912-14.123-14.088-35-14.088Q459-820 445-805.912 431-791.825 431-771v256Z"/>
+                        </svg> ${element.day.avgtemp_c}°C
+                    </p>
+                    <p class="temp-range">
+                        <span class="min-temp">${element.day.mintemp_c}</span>°C - <span class="max-temp">${element.day.maxtemp_c}</span>°C
+                    </p>
+                    <p class="rain-chance">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                            <path d="M479-208q16 0 24.5-5.5T512-230q0-11-8.5-17t-25.5-6q-42 0-85.5-26.5T337-373q-2-9-9-14.5t-15-5.5q-11 0-17 8.5t-4 17.5q15 84 71 121.5T479-208Zm1 128q-137 0-228.5-94T160-408q0-100 79.5-217.5T480-880q161 137 240.5 254.5T800-408q0 140-91.5 234T480-80Zm0-60q112 0 186-76.5T740-408q0-79-66.5-179.5T480-800Q353-688 286.5-587.5T220-408q0 115 74 191.5T480-140Zm0-340Z">
+                        </svg> ${element.day.daily_chance_of_rain}%
+                    </p>
+                    <p class="wind-speed">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                            <path d="M465-160q-54 0-85.5-28T348-273h68q0 26 11.5 39.5T465-220q27 0 38.5-12t11.5-41q0-29-11.5-42.5T465-329H80v-60h385q54 0 82 28t28 88q0 57-28 85t-82 28ZM80-568v-60h548q37 0 54-17.5t17-58.5q0-41-17-58.5T628-780q-38 0-55 20.5T556-708h-60q0-58 35-95t97-37q61 0 96 35.5T759-704q0 65-35 100.5T628-568H80Zm672 330v-60q35 0 51.5-19.5T820-374q0-38-18.5-55T748-446H80v-60h668q62 0 97 35t35 97q0 64-33 100t-95 36Z"/>
+                        </svg> ${element.day.maxwind_kph} km/h
+                    </p>
+                </div>
+            </div>`);
+        });
+    })
+    .catch(error => {
+        // Handle errors, including API errors and network errors
+        console.log('An error occurred:', error);
+    });
+}
+</script>
+</body>
+</html>

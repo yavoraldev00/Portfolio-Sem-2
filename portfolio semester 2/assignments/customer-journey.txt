@@ -1,0 +1,13 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-assignment-text">
+        <h2>Customer Journey</h2>
+
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" height="550px" width="100%" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FV9B6Od8V45DzS3mOOQEVLw%2FCustomer-Journey%3Fnode-id%3D0%253A1%26t%3DceUpr81fwzrIr67Z-1" allowfullscreen></iframe>
+
+        <p>In this assignemnt, I had to make a Customer Journey for a person looking to buy a new phone</p>
+
+        <p>There are various templates online, but the one I chose was from Figma</p>
+
+        <p>I had to think about all the steps the user would take, from coming up with the desire to buy a phone to after the purchase, and assign additional goals, feelings and pain/gain points for each step</p>            
+    </div>
+</div>

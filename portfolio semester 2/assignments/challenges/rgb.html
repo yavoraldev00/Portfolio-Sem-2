@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>RGB(A) validator</title>
+<style>
+    #validation_result {
+        width: 500px;
+    }
+
+    .preview {
+        height: 300px;
+        width: 400px;
+    }
+</style>
+</head>
+<body>
+    <form action="">
+        <p>Type in your RGB(A) code and I'll tell you if its valid or not!</p>
+        <p></p>
+        <label for="text_input">RGB or RGB(A) code</label><br>
+        <textarea name="" id="text_input" cols="30" rows="10"></textarea>
+        <button type="button" onclick="validateRGBA()">Validate</button>
+    </form>
+
+    <p id="validation_result"></p>
+    <div class="preview"></div>
+
+<script>
+    function validateRGBA(){
+        // gets the input from the user and removes any white space before and after
+        var input_to_validate = $("#text_input").val().trim()
+
+        // array made out of the numbers
+        input_numbers = input_to_validate.slice(4,-1).split(",")
+
+        // rgb() / rgba() part of the string
+        text_to_validate = input_to_validate.replace(input_to_validate.slice(4,-1),"")
+
+        // flag used for number validation
+        var numbers_flag = false;
+
+        // regex used to validate the text part of the input
+        var regex = /rgba?\(\)/g
+
+
+
+        // checks if rgb() / rgba() pattern is correct
+        if(!regex.test(text_to_validate)){
+            $("#validation_result").text("Please check for any typos. Your expression must be rgb(X,X,X,Y) or rgba(X,X,X,Y) where X is a number between 0-255 and Y is a decimal between 0.0 and 1.0");
+            return;
+        }
+
+
+        // checks if there's a correct number of numbers
+        if(input_numbers.length < 3 || input_numbers.length > 4){
+            $("#validation_result").text("Please put in exactly 3 numbers in range 0-255 and an optional decimal between 0.0 and 1.0");
+            return; 
+        }
+
+
+        // validation for numbers
+        input_numbers.map(function(el,index){
+            // check for the alpha character
+            if(index == 3){
+                // if not between 0 and 1 gives an error
+                if(el < 0 || el > 1){
+                    numbers_flag = true;
+                    $("#validation_result").text("For the decimal, please input a number between 0.0 and 1.0");
+                    return;
+                }
+            }
+            // if between 0-255 returns the number
+            if(Number(el) >= 0 && Number(el) <= 255){
+                return Number(el)
+            } else{     //if not in the range gives an error
+                numbers_flag = true;
+                $("#validation_result").text("Please check your Numbers. They need to be the range 0-255");
+                return;        
+            }
+        })
+
+
+        // stops function if numbers are not valid
+        if (numbers_flag){
+            return;
+        }
+
+    
+        // shows a message that the code is correct and gives a preview of how it looks
+        $("#validation_result").text("Your rgb code is valid! Here is what it would look like.")
+        $(".preview").css("background-color", input_to_validate);
+    }
+
+</script>
+</body>
+</html>

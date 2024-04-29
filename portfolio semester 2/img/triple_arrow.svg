@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- enable-background:new 0 0 48 48; -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="" xml:space="preserve">
+<g class="arrows-grouped">
+	<path d="M4.1,38l10.5-14L4.1,10h3.7l10.5,14L7.8,38H4.1z"/>
+	<path d="M16.7,38l10.5-14L16.7,10h3.7l10.5,14L20.4,38H16.7z"/>
+	<path d="M29.3,37.9l10.5-14l-10.5-14H33l10.5,14L33,37.9H29.3z"/>
+</g>
+</svg>

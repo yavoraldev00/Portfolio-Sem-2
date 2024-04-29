@@ -1,0 +1,72 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-assignment-text">
+        <h1>Asynchronous Code</h1>
+
+            <p>In this assignment, I am testing out how asynchronous code and how it works</p>
+
+            <p>Compared to normal code, asynchronous code is not executed top to bottom, but instead a request is sent and the code gets executed as soon as the request is finished</p>
+
+            <p>Here my request is made locally, so its finished almost instantly, while making a request to a server could take more time</p>
+
+            <div id="demo-button" onclick="window.open('/portfolio semester 2/assignments/challenges/async.html','_blank')">
+                Demo
+            </div>
+
+            <div class="block-code-with-highlights">
+                <pre>
+                    <code class="html language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;title&gt;Asynchronous functions&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="text-container"&gt;
+    &lt;p&gt;I am hard coded text :)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var test_2
+
+window.onload = function(){
+
+    //jquery
+    $.get("files/dummy.json", function(data){
+        console.log(data)
+        $(".text-container").append(`&lt;p&gt;I was written first!! Here is the final word in my file ${data.words[2].word}&lt;/p&gt;`)
+    })
+
+    //javascript
+    const http = new XMLHttpRequest();
+
+    //when status on request updates
+    http.onreadystatechange = function(){
+        console.log(http);
+        if(http.readyState == 4 && http.status == 200){
+            var data = JSON.parse(http.response)
+            var file_content = [];
+            data.words.forEach(function(el){file_content.push((el.word))})
+            $(".text-container").append(`&lt;p&gt;I was written second! I'm probably third because I'm an async function! I'm reading a file here are the contents ${file_content}&lt;/p&gt;`)
+        }
+    };
+
+    //sending the request with vanilla js
+    http.open("GET", "files/dummy.json", true);
+    http.send();
+
+    //not async
+    $(".text-container").append("&lt;p&gt;I was written third but I'm probably seen earlier. I was not written synchronously!&lt;/p&gt;")
+};
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+    </div>
+</div>

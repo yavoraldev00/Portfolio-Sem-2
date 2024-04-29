@@ -1,0 +1,79 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-assignment-text">
+        <h1>Pig Latin Translator</h1>
+
+            <p>In this assignment, I made a translator that outputs your text in pig latin</p>
+
+            <p>The things I had to do was seperate all the words in the sentance, as well as seperating them by a regex</p>
+
+            <p>For the word splitting I figured it out relatively quickly, but the word splitting doesn't work perfectly, since I haven't figured out every scenario how a might be spelled or other punctionation (like - , "" , & etc.). But it generally works :)!</p>
+            
+            <div id="demo-button" onclick="window.open('/portfolio semester 2/assignments/challenges/pig_latin.html','_blank')">
+                Demo
+            </div>
+
+            <div class="block-code-with-highlights">
+                <pre>
+                    <code class="html language-html">&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;title&gt;Pig latin translator&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form action=""&gt;
+        &lt;p&gt;I can translate your text into pig latin! Please type something in me and press "Translate"&lt;/p&gt;
+        &lt;label for="text_input"&gt;Text to translate&lt;/label&gt;&lt;br&gt;
+        &lt;textarea name="" id="text_input" cols="30" rows="10"&gt;&lt;/textarea&gt;
+        &lt;button type="button" onclick="translatePig()"&gt;Translate&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;h2&gt;Your sentance in pig latin&lt;/h2&gt;
+    &lt;p id="translated-text"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+    function translatePig(){
+
+        //gets original text
+        var originalText = $("#text_input").val()
+
+        //splits the words into array and removes most symbols
+        var splitText = originalText.split(/[\s,.!?;-]+/)
+        
+        //removes any empty array elements
+        splitText.forEach(function(el,index){
+            if (el == ""){
+                splitText.pop(index)
+            }
+        });
+
+        //translates into pig latin
+        var translatedSentance = splitText.map(function(word){
+
+            // makes each word into an array
+            word = word.split("")
+
+            //moves the first letter and ads 'ay'     
+            word.push(word.shift() + "ay")
+
+            //makes into a string again
+            word = word.join("")
+            return word;
+        })
+
+        //joins the array so it display as 1 sentance without comas ,
+        translatedSentance = translatedSentance.join(" ")
+
+        //displays the text to the user
+        $("#translated-text").text(translatedSentance)
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+    </div>
+</div>

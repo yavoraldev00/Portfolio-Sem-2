@@ -1,0 +1,5 @@
+In this exercise I translate a user input into "pig latin" and shows it to the user
+
+The main challenge I have with this challenge is having to take into account all the symbols like periods, exclamations, hyphens and so on. I have only taken into account some of them and not all, but the translator generally works.
+
+I stored the information into arrays and then modified them to include the word mixup \

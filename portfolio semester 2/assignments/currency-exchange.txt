@@ -1,0 +1,169 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-assignment-text">
+        <h1>Currency Exchange</h1>
+
+            <p>In this assignment, I made a simple app that calculates how much your money is worth in different currencies, according to exchange rates</p>
+
+            <p>Main challenge I had was looking for an API, since there are various and most of them are locked behind a paid subscription</a>
+
+            <div id="demo-button" onclick="window.open('assignments/challenges/currency_exchange.html','_blank')">
+                Demo
+            </div>
+
+            <div class="block-code-with-highlights">
+                <pre>
+                    <code class="html language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;title&gt;Currency Converter&lt;/title&gt;
+&lt;style&gt;
+.remove {
+    display: none;
+}
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;h1&gt;Select a Currency to exchange&lt;/h1&gt;
+
+    &lt;label for="base_currency"&gt;From&lt;/label&gt;
+    &lt;select name="base_currency" id="base_currency"&gt;
+        &lt;option disabled selected value&gt;-&lt;/option&gt;
+        &lt;option value="AUD"&gt;AUD&lt;/option&gt;
+        &lt;option value="BGN"&gt;BGN&lt;/option&gt;
+        &lt;option value="BRL"&gt;BRL&lt;/option&gt;
+        &lt;option value="CAD"&gt;CAD&lt;/option&gt;
+        &lt;option value="CHF"&gt;CHF&lt;/option&gt;
+        &lt;option value="CNY"&gt;CNY&lt;/option&gt;
+        &lt;option value="CZK"&gt;CZK&lt;/option&gt;
+        &lt;option value="DKK"&gt;DKK&lt;/option&gt;
+        &lt;option value="EUR"&gt;EUR&lt;/option&gt;
+        &lt;option value="GBP"&gt;GBP&lt;/option&gt;
+        &lt;option value="HKD"&gt;HKD&lt;/option&gt;
+        &lt;option value="HRK"&gt;HRK&lt;/option&gt;
+        &lt;option value="HUF"&gt;HUF&lt;/option&gt;
+        &lt;option value="IDR"&gt;IDR&lt;/option&gt;
+        &lt;option value="ILS"&gt;ILS&lt;/option&gt;
+        &lt;option value="ISK"&gt;ISK&lt;/option&gt;
+        &lt;option value="JPY"&gt;JPY&lt;/option&gt;
+        &lt;option value="KRW"&gt;KRW&lt;/option&gt;
+        &lt;option value="MXN"&gt;MXN&lt;/option&gt;
+        &lt;option value="MYR"&gt;MYR&lt;/option&gt;
+        &lt;option value="NOK"&gt;NOK&lt;/option&gt;
+        &lt;option value="NZD"&gt;NZD&lt;/option&gt;
+        &lt;option value="PHP"&gt;PHP&lt;/option&gt;
+        &lt;option value="PLN"&gt;PLN&lt;/option&gt;
+        &lt;option value="RON"&gt;RON&lt;/option&gt;
+        &lt;option value="RUB"&gt;RUB&lt;/option&gt;
+        &lt;option value="SEK"&gt;SEK&lt;/option&gt;
+        &lt;option value="SGD"&gt;SGD&lt;/option&gt;
+        &lt;option value="THB"&gt;THB&lt;/option&gt;
+        &lt;option value="TRY"&gt;TRY&lt;/option&gt;
+        &lt;option value="USD"&gt;USD&lt;/option&gt;
+        &lt;option value="ZAR"&gt;ZAR&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;label for="exchange_currency"&gt;to&lt;/label&gt;
+    &lt;select name="exchange_currency" id="exchange_currency"&gt;
+        &lt;option disabled selected value&gt;-&lt;/option&gt;
+        &lt;option value="AUD"&gt;AUD&lt;/option&gt;
+        &lt;option value="BGN"&gt;BGN&lt;/option&gt;
+        &lt;option value="BRL"&gt;BRL&lt;/option&gt;
+        &lt;option value="CAD"&gt;CAD&lt;/option&gt;
+        &lt;option value="CHF"&gt;CHF&lt;/option&gt;
+        &lt;option value="CNY"&gt;CNY&lt;/option&gt;
+        &lt;option value="CZK"&gt;CZK&lt;/option&gt;
+        &lt;option value="DKK"&gt;DKK&lt;/option&gt;
+        &lt;option value="EUR"&gt;EUR&lt;/option&gt;
+        &lt;option value="GBP"&gt;GBP&lt;/option&gt;
+        &lt;option value="HKD"&gt;HKD&lt;/option&gt;
+        &lt;option value="HRK"&gt;HRK&lt;/option&gt;
+        &lt;option value="HUF"&gt;HUF&lt;/option&gt;
+        &lt;option value="IDR"&gt;IDR&lt;/option&gt;
+        &lt;option value="ILS"&gt;ILS&lt;/option&gt;
+        &lt;option value="ISK"&gt;ISK&lt;/option&gt;
+        &lt;option value="JPY"&gt;JPY&lt;/option&gt;
+        &lt;option value="KRW"&gt;KRW&lt;/option&gt;
+        &lt;option value="MXN"&gt;MXN&lt;/option&gt;
+        &lt;option value="MYR"&gt;MYR&lt;/option&gt;
+        &lt;option value="NOK"&gt;NOK&lt;/option&gt;
+        &lt;option value="NZD"&gt;NZD&lt;/option&gt;
+        &lt;option value="PHP"&gt;PHP&lt;/option&gt;
+        &lt;option value="PLN"&gt;PLN&lt;/option&gt;
+        &lt;option value="RON"&gt;RON&lt;/option&gt;
+        &lt;option value="RUB"&gt;RUB&lt;/option&gt;
+        &lt;option value="SEK"&gt;SEK&lt;/option&gt;
+        &lt;option value="SGD"&gt;SGD&lt;/option&gt;
+        &lt;option value="THB"&gt;THB&lt;/option&gt;
+        &lt;option value="TRY"&gt;TRY&lt;/option&gt;
+        &lt;option value="USD"&gt;USD&lt;/option&gt;
+        &lt;option value="ZAR"&gt;ZAR&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;label for="amount"&gt;Amount:&lt;/label&gt;
+    &lt;input id="amount" type="number" size="4"&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;button onclick="exchange()"&gt;Exchange&lt;/button&gt;
+    &lt;p id="exchange_result"&gt;&lt;/p&gt;
+    &lt;p class="remove" id="err_msg" style="color:red"&gt;Please select a currency to exchange from and to and indicate an amount bigger than 0&lt;/p&gt;
+&lt;script&gt;
+function exchange(){
+    // resets all errors 
+    $("#err_msg").addClass("remove")
+    $("#base_currency").css("background-color", "")
+    $("#exchange_currency").css("background-color", "")
+    $("#amount").css("background-color", "")
+
+    baseCurrency = $("#base_currency").val()
+    exchangeCurrency = $("#exchange_currency").val()
+    exchangeAmount = $("#amount").val()
+
+    // error message if incorrect data
+    if(baseCurrency == null || exchangeCurrency == null || exchangeAmount &lt;= 0){
+        if(baseCurrency == null){
+            $("#base_currency").css("background-color", "rgba(255, 0, 0, 0.2)")
+        }
+        if(exchangeCurrency == null){
+            $("#exchange_currency").css("background-color", "rgba(255, 0, 0, 0.2)")
+        }
+        if(exchangeAmount &lt;= 0){
+            $("#amount").css("background-color", "rgba(255, 0, 0, 0.2)")
+        }
+
+        $("#err_msg").removeClass("remove")
+        return
+    }
+
+    // if currency is the same, doesn't run function, if different, runs API call
+    if(baseCurrency == exchangeCurrency){
+        $("#exchange_result").text(`${exchangeAmount} ${baseCurrency} = ${exchangeAmount} ${baseCurrency}`)
+    }else{
+        convertCurrency(baseCurrency,exchangeCurrency,exchangeAmount)
+    }
+}
+
+// currency exchange api call
+function convertCurrency(baseCurrency,exchangeCurrency,amount) {
+  var exchange_result
+  fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=Aj9RHnGZ4TxYvbdDkx4iHMpwuSLE9GuALrkH0DKn&currencies=${exchangeCurrency}&base_currency=${baseCurrency}`)
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+        exchange_result = data.data[exchangeCurrency] * Number(amount)
+        $("#exchange_result").text(`${exchangeAmount} ${baseCurrency} = ${exchange_result} ${exchangeCurrency}`)
+      debugger;
+    })
+    .catch(error =&gt; {
+      console.log('An error occurred:', error);
+    });
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+    </div>
+</div>

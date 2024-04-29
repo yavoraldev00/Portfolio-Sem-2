@@ -1,0 +1,81 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-image-gallery-container">
+        <div class="Y2K-gallery-image" onclick="openImage(this)">
+            <img src="" alt="">
+        </div>
+        <div class="Y2K-gallery-images-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+            <div class="Y2K-gallery-images">
+                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                    <img src="img/logo iterations.png" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/new_logo_2.png" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/new_logo_3.png" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/new_logo_4.png" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/new_logo_5.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Y2K-assignment-text">
+        <h2>Logo</h2>
+        
+        <p style="font-size: 12px; background-color: gray; color: white;"><i>Old logo, scroll down for current logo</i></p>
+
+        <div class="logo-assignment-page">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 128 128" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+            <style type="text/css">
+                .st0{stroke:#000000;stroke-miterlimit:10;}
+            </style>
+            <g>
+            <polygon class="st1" id="top-left-to-bottom-right" points="0,0 113,128 128,128 15,0 "/>
+            <polygon class="st1" id="bottom-left-to-top-right" points="128,0 15,128 0,128 113,0 "/>
+            <rect class="st1" id="middle-bar" x="59" y="0" width="10" height="128"/>
+            </g>
+            <rect id="top-bar" y="19" class="st0" width="128" height="10"/>
+            <rect id="bottom-bar" y="99" class="st0" width="128" height="10"/>
+            </svg>
+        </div>
+        
+        <h3>Explanation</h3>
+
+        <p>The logo is going to be used for my personal portfolio. For the design I didn't have anything in mind from the start, so I went with something relating to my name.</p>
+        
+        <p>The first thing I noticed is that the first lettter of my name in latin is Y and A (Yavor Aldev), which are both symmetrical, so I decided to do something relating to symmetry. I also thought about something with my name in Cyrilic, but abandoned the idea and continued with the latin letters.</p>
+        
+        <p>At first I just overlayed the letters on top of each other to see how it looked and thought about cutting the letters off in various ways to make an illusion where you see the letter without it being there fully</p>
+        
+        <p>After that I started playing around with making vectors to see how it would look. I went with a more abstract look compared to more convetional looking fonts</p>
+        
+        <p>When I continued with that idea, I noticed some interesting patterns could be made</p>
+        
+        <p>Currently, for my logo I have decided for it to be 2 symmetrical black bars, alongside 3 other bars going accross them. With them, I could illustrate the first letter of my names while also making some interesting graphics (one idea I have is having an hourglass that spins and has moving sand inside)</p>
+        
+        <p>I'm planning on changing the design, but probably sticking to the current idea I have</p>
+
+        <h2>New Logo</h2>
+
+        <p>Since I wasn't satisfied with my previous logo, I decided to redo it</p>
+
+        <p>I came back to the idea of it relating to my name, specifically the first letter of my first and last name. I overlayed them on top of one another to try and discover something.</p>
+
+        <p>First thing I noticed is after placing the letter A and Я is a sort of figure with a cape/hood <span class="in-line-image-link" onclick="loadTextImage(this)">[2]</span> . Another idea I imagined is a drawing compass and a half-circle ruler <span class="in-line-image-link" onclick="loadTextImage(this)">[3]</span></p>
+
+        <p>I asked my teacher for feedback on the idea and I was told not to over-complicate the design and go more the way of the second idea, but to change it to something less complex</p>
+
+        <p>After looking a bit more into the sketch I though the "A" looked like a pencil drawing tip and the Я was a sort of line that was drawn. So I decided to go with that idea <span class="in-line-image-link" onclick="loadTextImage(this)">[4]</span></p>
+
+        <p>After that I went into illustrator and started sketching the logo</p>
+
+        <p>Currently this is my new logo <span class="in-line-image-link" onclick="loadTextImage(this)">[5]</span> and I've set it to have white onlines on my portfolio since it has a dark color scheme for the background</p>
+    </div>
+</div>

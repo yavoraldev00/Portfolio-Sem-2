@@ -1,0 +1,29 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-image-gallery-container">
+        <div class="Y2K-gallery-image" onclick="openImage(this)">
+            <img src="" alt="">
+        </div>
+        <div class="Y2K-gallery-images-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+            <div class="Y2K-gallery-images">
+                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                    <img src="img/demo-homepage.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Y2K-assignment-text">
+        <h1>Interactive Design</h1>
+
+        <p>In this assignment, I had to create an interactive web shop</p>
+
+        <p>I choose to focus it on a website about computers, so the cateogires and items in the site are about computers and computer accessories, as well as video game consoles and office supplies</p>
+
+        <p>The pages on the website are a homepage, a list of products page, a product summary page, login and order page</p>
+
+        <p>Below you can find a small simple demo on the website</p>
+
+        <div id="demo-button" onclick="window.open('https://www.figma.com/proto/dQjoM7nFybqTwYaMnda0PD/Online-shop-prototype?node-id=1-2&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=23%3A821','_blank')">Demo</div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Pig latin translator</title>
+</head>
+<body>
+    <form action="">
+        <p>I can translate your text into pig latin! Please type something in me and press "Translate"</p>
+        <label for="text_input">Text to translate</label><br>
+        <textarea name="" id="text_input" cols="30" rows="10"></textarea>
+        <button type="button" onclick="translatePig()">Translate</button>
+    </form>
+
+    <h2>Your sentance in pig latin</h2>
+    <p id="translated-text"></p>
+
+<script>
+    function translatePig(){
+
+        //gets original text
+        var originalText = $("#text_input").val()
+
+        //splits the words into array and removes most symbols
+        var splitText = originalText.split(/[\s,.!?;'":-]+/)
+        
+        //removes any empty array elements
+        splitText.forEach(function(el,index){
+            if (el == ""){
+                splitText.pop(index)
+            }
+        });
+
+        //translates into pig latin
+        var translatedSentance = splitText.map(function(word){
+
+            // makes each word into an array
+            word = word.split("")
+
+            //moves the first letter and ads 'ay'     
+            word.push(word.shift() + "ay")
+
+            //makes into a string again
+            word = word.join("")
+            return word;
+        })
+
+        //joins the array so it display as 1 sentance without comas ,
+        translatedSentance = translatedSentance.join(" ")
+
+        //displays the text to the user
+        $("#translated-text").text(translatedSentance)
+    }
+</script>
+</body>
+</html>

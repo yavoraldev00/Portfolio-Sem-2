@@ -1,0 +1,621 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-assignment-text">
+        <h1>Hermes site</h1>
+
+            <p>In this assignment, I had to recreate all the styling for a <a href="https://mobirise.com/extensions/resumeamp/webDesigner/" target="_blank">portfolio</a> (without the functionality)</p>
+
+            <p>This compared to hermes.nl was way easier since the styling is more simple, even if it was built with a framework as well with weird class names</p>
+
+            <p>Additionally I learned about <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">CSS grid</a> and it made my reconstruction of the website go way easier, even though I was a bit confused how to use the grid template at the beggining</p>
+
+            <div id="demo-button" onclick="window.open('assignments/challenges/grid_site/grid_site.html','_blank')">
+                Demo
+            </div>
+
+            <div class="block-code-with-highlights">
+                <pre>
+                    <code class="html language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    /* * {
+        box-sizing: border-box;
+    } */
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #eaf4f6;
+    }
+
+    p {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-family: 'Didact Gothic',sans-serif;
+        font-size: 0.9rem;
+        text-align: center;
+        font-style: normal;
+        line-height: 1.6;
+        word-break: break-word;
+        word-wrap: break-word;
+    }
+
+    h2 {
+        padding-top: 60px;
+
+        position: relative;
+        margin-bottom: 70px;
+        font-family: 'Didact Gothic',sans-serif;
+        font-size: 2.1rem;
+        text-align: center;
+        font-style: normal;
+        line-height: 1.2;
+        word-break: break-word;
+        word-wrap: break-word;
+        margin: auto;
+        padding: 0;
+    }
+
+    h2::after {
+        position: absolute;
+        left: 50%;
+        margin-left: -1.5rem;
+        bottom: -35px;
+        content: "";
+        width: 3rem;
+        height: 2px;
+        background-color: #4a4645;
+        transition: width .3s;
+    }
+
+    h3 {
+        padding-top: 60px !important;
+
+        font-weight: 400;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 0;
+        margin: auto;
+        font-family: 'Didact Gothic',sans-serif;
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    h4 {
+        margin-top: 0;
+        font-family: 'Didact Gothic',sans-serif;
+        font-size: 0.9rem;
+        line-height: 1;
+        word-break: break-word;
+        word-wrap: break-word;
+        margin-bottom: 10px;
+    }
+
+    header {
+        width: 100vw;
+        z-index: 9;
+    }
+
+    header * {
+        z-index: 9;
+    }
+
+    .header-container {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1366px;
+        background-color: aliceblue;
+        margin: 0 76.6px;
+    }
+
+    header nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        color: #4ea2e3;
+        font-family: 'Didact Gothic',sans-serif;
+        font-size: 0.9rem;
+    }
+
+    header nav ul {
+        display: flex;
+        list-style-type: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        color: #4ea2e3;
+    }
+
+    header nav ul li {
+        margin: 0.667em 1em;
+    }
+
+    button {
+        font-family: 'Didact Gothic', sans-serif;
+        font-size: 0.9rem;
+        padding: 15px 20px;
+        border-radius: 0px;
+        border-color: #1c6faf;
+        color: #1c6faf;
+        background: none;
+        font-weight: 400;
+        border-width: 2px;
+        border-style: solid;
+        font-style: normal;
+        margin: 0.8rem;
+        white-space: normal;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        word-break: break-word;
+    }
+
+    main {
+        max-width: 1366px;
+        margin: auto;
+        padding-top: 78px;
+        display: grid;
+        column-gap: 10px;
+        row-gap: 15px;
+        grid-template-rows: 416px 480px 208px 487px 529px 192px 327px 192px 388px 556px 109px;
+    }
+
+    .grid-row-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-row-container &gt; * {
+        height: 100%;
+        background-color: #cbe6ea;
+    }
+
+    .row-1 {
+        display: grid;
+        grid-template-columns: 445px 1fr;
+        column-gap: 10px;
+    }
+
+    .row-1 h2 {
+        margin-bottom: 70px;
+        letter-spacing: 5px;
+    }
+
+    .face-photo {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .face-photo img {
+        transform: translateY(-90px);
+        width: 100%;
+        height: auto;
+    }
+
+    #about-me {
+        background-image: url("img/aboutme-1-2000x1333.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30rem;
+        position: relative;
+        margin: 0;
+    }
+
+    #about-me h2 {
+        margin-bottom: 70px;
+    }
+
+    #resume h2 {
+        padding-top: 60px;
+    }
+
+    .row-4 {
+        display: grid;
+        grid-template-columns: 663px 1fr;
+        column-gap: 10px;
+    }
+
+    #education {
+        height: 95%;
+    }
+
+    #pricing h2 {
+        padding-top: 60px;
+        margin-bottom: 100px;
+    }
+
+    .pricing-container {
+        margin: auto;
+        width: 70%;
+        display: flex;
+        align-items: baseline;
+        /* grid-template-columns: repeat(3,1fr); */
+    }
+
+    .pricing-container div {
+        flex-basis: 33.3%;
+    }
+
+    .pricing-container button{
+        display: grid;
+        margin: auto !important;
+    }
+
+    #my-services h2{
+        padding-top: 60px;
+    }
+
+    .row-7 {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        column-gap: 10px;
+    }
+
+    .row-7 h3 {
+        margin-top: 60px;
+    }
+
+    .row-7 p {
+        width: 74%;
+        margin: auto;
+    }
+
+    .row-7 div:nth-child(2) {
+        height: 100%;
+    }
+
+    .row-7 div:not(:nth-child(2)) {
+        height: 95%;
+    }
+
+    #recent-works h2{
+        padding-top: 60px;
+    }
+
+    .row-9 {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        column-gap: 10px;
+    }
+
+    .picture {
+        height: 227px;
+        background-color: #4ea2e3;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        padding: 0!important;
+        border: none!important;
+    }
+
+    .row-9 h3 {
+        width: 86%;
+        font-size: 1.6rem;
+        line-height: 1.2;
+        letter-spacing: 5px;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    #map {
+        position: relative;
+        overflow: hidden;
+    }
+
+    #map img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        padding: 0!important;
+        border: none!important;
+    }
+
+    .row-10 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+
+    .row-10 h2 {
+        margin-bottom: 60px;
+    }
+
+    .fieldset {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+
+    }
+
+    label.input-label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    label input {
+        margin-bottom: 7px;
+        background: #ffffff;
+        padding: 0.8rem;
+        border: 0px;
+    }
+
+    label.area {
+        width: 100%;
+        margin: 0;
+    }
+
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        font: inherit;
+        border: 0px;
+    }
+
+    #socials-links {
+        display: grid;
+        grid-template-columns: 274px 608px;
+        width: fit-content;
+        margin: auto;
+    }
+
+    #social-links &gt; p {
+        text-align: left;
+    }
+
+    #links {
+        display: grid;
+        grid-template-rows: 16px auto;
+    }
+
+    #social-media-links {
+        display: flex;
+        align-items: center;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;div class="header-container"&gt;
+            &lt;div class="logo"&gt;Web Designer&lt;/div&gt;
+            &lt;nav class="header-nav"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;About Me&lt;/li&gt;
+                    &lt;li&gt;Resume&lt;/li&gt;
+                    &lt;li&gt;Pricing&lt;/li&gt;
+                    &lt;li&gt;My Services&lt;/li&gt;
+                    &lt;li&gt;Recent Works&lt;/li&gt;
+                    &lt;li&gt;Contact Me&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;button class="back-to-main"&gt;
+                    Back to main
+                &lt;/button&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;div class="grid-row-container row-1"&gt;
+            &lt;div class="info" style="display: flex;"&gt;
+                &lt;div style="margin: auto"&gt;
+                    &lt;h2&gt;Mary D. Davis&lt;/h2&gt;
+                    &lt;p&gt;Web Designer&lt;/p&gt;
+                    &lt;div class="button-container" style="width: fit-content; margin: auto;"&gt;
+                        &lt;button&gt;Download CV&lt;/button&gt;
+                        &lt;button&gt;Contact Me&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="face-photo"&gt;
+                &lt;img src="img/header1-1706x1137.jpg" alt="" srcset=""&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container" style="overflow: hidden;"&gt;
+            &lt;div id="about-me"&gt;
+                &lt;h2&gt;About Me&lt;/h2&gt;
+                &lt;p style="width: 435px; margin: auto; padding-bottom: 20px;"&gt;I am Mary D. Davis, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress and using Resume Designer Theme. I love to talk with you about our unique and Resume Designer Template.&lt;/p&gt;
+                &lt;p&gt;AGE . . . . . 27&lt;/p&gt;
+                &lt;p&gt;RESIDENCE . . . . . USA&lt;/p&gt;
+                &lt;p&gt;FREELANCE . . . . . Available&lt;/p&gt;
+                &lt;p&gt;ADDRESS . . . . . California, USA&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container"&gt;
+            &lt;div id="resume"&gt;
+                &lt;h2&gt;Resume&lt;/h2&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container row-4"&gt;
+            &lt;div id="education"&gt;
+                &lt;h3&gt;EDUCATION&lt;/h3&gt;
+                &lt;p&gt;&lt;b&gt;2007 - 2009 PROGRAMMING COURSE&lt;/b&gt;  (PARIS)&lt;br&gt;
+                    Coursework - Git, WordPress, Javascript, iOS, Android, Resume Designer Theme&lt;/p&gt;
+                &lt;p&gt;&lt;b&gt;2005 - 2007 WEB DESIGN COURSE&lt;/b&gt;  (LONDON)&lt;br&gt;
+                    Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript&lt;/p&gt;
+                &lt;p&gt;&lt;b&gt;2004 - 2005 ART UNIVERSITY&lt;/b&gt;  (NEW YORK)&lt;br&gt;
+                    Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div id="experience"&gt;
+                &lt;h3&gt;EXPERIENCE&lt;/h3&gt;
+                &lt;p&gt;2017 - PRESENT ART DIRECTOR  (FACEBOOK INC.)&lt;br&gt;
+                    Collaborate with creative and development teams on the execution of ideas.&lt;/p&gt;
+                &lt;p&gt;2014-2017 SENIOR DEVELOPER  (GOOGLE INC.)&lt;br&gt;
+                    Optimize website performance using latest technology.&lt;/p&gt;
+                &lt;p&gt;2010-2014 FRONT-END DEVELOPER  (ABC INC.)&lt;br&gt;
+                    Monitored technical aspects of the front-end delivery for several projects. Using the Resume Designer Template&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container"&gt;
+            &lt;div id="pricing"&gt;
+                &lt;h2&gt;Pricing&lt;/h2&gt;
+                &lt;div class="pricing-container"&gt;
+                    &lt;div&gt;
+                        &lt;h3&gt;22$&lt;/h3&gt;
+                        &lt;p&gt;Web Development&lt;br&gt;Advertising&lt;/p&gt;
+                        &lt;button&gt;Buy&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;h3&gt;35$&lt;/h3&gt;
+                        &lt;p&gt;Web Development&lt;br&gt;Advertising&lt;br&gt;Game Development&lt;/p&gt;
+                        &lt;button&gt;Buy&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;h3&gt;50$&lt;/h3&gt;
+                        &lt;p&gt;Web Development&lt;br&gt;Advertising&lt;br&gt;Game Development&lt;br&gt;Music Writing&lt;br&gt;Photography&lt;/p&gt;
+                        &lt;button&gt;Buy&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container"&gt;
+            &lt;div id="my-services"&gt;
+                &lt;h2&gt;My Services&lt;/h2&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container row-7"&gt;
+            &lt;div id="web-dev"&gt;
+                &lt;h3&gt;WEB DEVELOPMENT&lt;/h3&gt;
+                &lt;p&gt;Modern and mobile-ready website made with Resume Designer Template will help you reach all of your marketing.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div id="advertising"&gt;
+                &lt;h3&gt;ADVERTISING&lt;/h3&gt;
+                &lt;p&gt;Advertising services include television, radio, print, mail and web. Take a look at this Resume Designer Theme right now!&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div id="game-dev"&gt;
+                &lt;h3&gt;GAME DEVELOPMENT&lt;/h3&gt;
+                &lt;p&gt;Developing memorable and unique mobile android, ios games. Try Resume Designer Theme right now!&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div id="music"&gt;
+                &lt;h3&gt;MUSIC WRITING&lt;/h3&gt;
+                &lt;p&gt;Music copying, transcription, arranging and composition services. Try Resume Designer Template right now!&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container"&gt;
+            &lt;div id="recent-works"&gt;
+                &lt;h2&gt;Recent Works&lt;/h2&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container row-9"&gt;
+            &lt;div id="mobile"&gt;
+                &lt;div class="picture"&gt;
+                    &lt;img src="img/recentworks1-628x437.jpg" alt=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text"&gt;
+                    &lt;h3&gt;Mobile application&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="social-web"&gt;
+                &lt;div class="picture"&gt;
+                    &lt;img src="img/recentworks2-7-628x437.jpg" alt="" srcset=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text"&gt;
+                    &lt;h3&gt;Social website design&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="ecomerce"&gt;
+                &lt;div class="picture"&gt;
+                    &lt;img src="img/recentworks3-644x448.jpg" alt="" srcset=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text"&gt;
+                    &lt;h3&gt;eCommerce website design&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="corporate-design"&gt;
+                &lt;div class="picture"&gt;
+                    &lt;img src="img/recentworks4-644x448.jpg" alt=""&gt;
+                &lt;/div&gt;
+                &lt;div class="text"&gt;
+                    &lt;h3&gt;Corporate website design&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container row-10"&gt;
+            &lt;div id="map"&gt;
+                &lt;img src="img/Untitled.png" alt=""&gt;
+            &lt;/div&gt;
+            &lt;div id="contact-form"&gt;
+                &lt;h2 style="padding-top: 60px;"&gt;Contact Form&lt;/h2&gt;
+                &lt;div class="fieldset"&gt;
+                    &lt;label class="input-label"&gt;
+                        &lt;input type="hidden" name="form[data][0][0]" value="Name" id="form[data][1][0]-map4-e" data-form-field=""&gt;
+                        &lt;input type="text" name="form[data][0][1]" data-form-field="Name" placeholder="Name" required="" id="form[data][1][1]-map4-e"&gt;
+                    &lt;/label&gt;
+                    &lt;label class="input-label"&gt;                 
+                        
+                    &lt;/label&gt;
+                    &lt;label class="input-label"&gt;
+                        &lt;input type="hidden" name="form[data][1][0]" value="Email" id="form[data][0][0]-map4-e" data-form-field=""&gt;
+                        &lt;input type="email" name="form[data][1][1]" data-form-field="Email" placeholder="Email" required="" id="form[data][0][1]-map4-e"&gt;
+                    &lt;/label&gt;
+                    &lt;label class="area"&gt;
+                        &lt;input type="hidden" name="form[data][2][0]" value="Message" id="form[data][3][0]-map4-e" data-form-field=""&gt;
+                        &lt;textarea name="form[data][2][1]" rows="7" data-form-field="Message" placeholder="Message" id="form[data][3][1]-map4-e"&gt;&lt;/textarea&gt;
+                    &lt;/label&gt;
+                    &lt;div class="btn-block"&gt;
+                        &lt;span class="input-group-btn"&gt;&lt;button type="submit" class="btn btn-all-width btn-form  btn-primary-outline display-4"&gt;Send message&lt;/button&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid-row-container" style="background-color: #cbe6ea; padding-top: 20px"&gt;
+            &lt;div id="socials-links"&gt;
+                &lt;div id="address"&gt;
+                    &lt;p style="text-align: left;"&gt;&lt;b&gt;ADDRESS&lt;/b&gt;&lt;/p&gt;
+                    &lt;p style="text-align: left; margin-top: -10px"&gt;California, USA&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div id="links"&gt;
+                    &lt;h4 id="contact-text" style="text-align: left;"&gt;Contact&lt;/h4&gt;
+                    &lt;div id="social-media-links"&gt;
+                        &lt;div id="phone"&gt;+987 654 32100&lt;/div&gt;
+                        &lt;div id="twitter"&gt;Twitter&lt;/div&gt;
+                        &lt;div id="github"&gt;Github&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+    </div>
+</div>

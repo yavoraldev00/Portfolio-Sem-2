@@ -1,0 +1,57 @@
+<div class="Y2K-assignment-page hide-right">
+    <div class="Y2K-image-gallery-container">
+        <div class="Y2K-gallery-image" onclick="openImage(this)">
+            <img src="" alt="">
+        </div>
+        <div class="Y2K-gallery-images-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-up" id="down-arrow-gallery" onclick="goUp(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="250 460 450 280" class="Y2K-gallery-arrow-down" id="down-arrow-gallery" onclick="goDown(this)"><path d="M480 696 280 497h400L480 696Z"/></svg>
+            <div class="Y2K-gallery-images">
+                <div class="Y2K-gallery-image-thumbnail active-image" onclick="imageFunc(this)">
+                    <img src="img/black_3.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/black_6.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/black_11.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/blue_2.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/blue_8.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/blue_9.jpg" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/fontys_chairs.png" alt="">
+                </div>
+                <div class="Y2K-gallery-image-thumbnail" onclick="imageFunc(this)">
+                    <img src="img/fontys_chairs8.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="Y2K-assignment-text">
+        <h2>Layout in Adobe Indesign</h2>
+
+        <div id="demo-button" onclick="window.open('assignments/challenges/indesign-photos.html','_blank')">
+            Layout
+        </div>
+
+        <p>In this assignemnt, I had to create a layout for a bunch of pictures that I had to take. The theme was similar subjects with no other real requirements</p>
+
+        <p>The subject I chose for the layout was the chairs found in the building I study at Fontys, since they all look similar, but have differences between each other</p>
+
+        <p>I started with going around the building and just taking pictures of every chair and bench I saw <span class="in-line-image-link" onclick="loadTextImage(this)">[1]</span><span class="in-line-image-link" onclick="loadTextImage(this)">[2]</span><span class="in-line-image-link" onclick="loadTextImage(this)">[3]</span><span class="in-line-image-link" onclick="loadTextImage(this)">[4]</span><span class="in-line-image-link" onclick="loadTextImage(this)">[5]</span><span class="in-line-image-link" onclick="loadTextImage(this)">[6]</span></p>
+
+        <p>After I took the pictures and looked around them I noticed I shot them in such a way where they look a bit humanlike, so for the layout, I wanted to make a short story about it</p>
+
+        <p>For the cover, I chose to make it super serious looking like a thriller movie/tv show to contrast and make a joke aobut how silly sentient chairs is of an idea <span class="in-line-image-link" onclick="loadTextImage(this)">[7]</span></p>
+
+        <p>For the layout of the actual set itself, I tried to make it so it flows naturally, as well as making some images bigger depending on the importance of the text <span class="in-line-image-link" onclick="loadTextImage(this)">[8]</span></p>
+    </div>
+</div>
